@@ -41,7 +41,7 @@ def create_object(object, named_objects = dict()):
     return o
 
 
-factory_functions = {robosim_schema.Sim_ : create_sim, robosim_schema.World_ : create_world, robosim_schema.Body_ : create_body, robosim_schema.BoxTotalMass : create_box_total_mass }
+factory_functions = {ode_schema.Sim_ : create_sim, ode_schema.World_ : create_world, ode_schema.Body_ : create_body, ode_schema.BoxTotalMass : create_box_total_mass }
 
 
 
