@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Sim xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Sim">
+  <Name>Simpleton Simulation</Name>
+  <World xsi:type="World">
+	 <Name>Earth</Name>
+	 <Gravity X="0.0" Y="0.0" Z="-1.0"/>
+  </World>
+
+  <Body>
+	 <Name>Thing</Name>
+	 <World>Earth</World>
+
+	 <Mass xsi:type="BoxTotalMass">
+		<TotalMass>1</TotalMass>
+		<LX>1.0</LX>
+		<LY>1.0</LY>
+		<LZ>1.0</LZ>
+	 </Mass>
+
+  </Body>
+</Sim>
