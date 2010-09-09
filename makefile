@@ -12,7 +12,7 @@ ode-schema.py: ode-schema.xsd
 	${PYXBGEN} -u ode-schema.xsd -m ode-schema
 
 ode-schema.hxx ode-schema.cxx:
-	${XSDCXX} cxx-tree ode-schema.xsd
+	${XSDCXX} cxx-tree --generate-polymorphic --generate-serialization ode-schema.xsd
 
 install:
 	echo not implemented yet
