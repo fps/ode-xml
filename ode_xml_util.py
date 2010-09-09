@@ -1,4 +1,4 @@
-import robosim_schema
+import ode_schema
 import ode
 
 
