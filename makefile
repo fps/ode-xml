@@ -11,7 +11,7 @@ all: ode_schema.hxx ode_schema.cxx ode_schema.py
 ode_schema.py: ode_schema.xsd
 	${PYXBGEN} -u ode_schema.xsd -m ode_schema
 
-ode_schema.hxx ode_schema.cxx:
+ode_schema.hxx ode_schema.cxx: ode_schema.xsd
 	${XSDCXX} cxx-tree --generate-polymorphic --generate-serialization ode_schema.xsd
 
 install:

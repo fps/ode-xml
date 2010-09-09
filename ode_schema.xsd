@@ -115,13 +115,11 @@
   <xsd:complexType name="BoxTotalMass">
 	 <xsd:complexContent>
 		<xsd:extension base="Mass">
-		  <xsd:sequence>
-			 <xsd:element name="TotalMass" type="xsd:float"/>
-			 <xsd:element name="LX" type="xsd:float"/>
-			 <xsd:element name="LY" type="xsd:float"/>
-			 <xsd:element name="LZ" type="xsd:float"/>
-		  </xsd:sequence>
-		</xsd:extension>		  
+		  <xsd:attribute name="M" type="xsd:float"/>
+		  <xsd:attribute name="LX" type="xsd:float"/>
+		  <xsd:attribute name="LY" type="xsd:float"/>
+		  <xsd:attribute name="LZ" type="xsd:float"/>
+		</xsd:extension>
 	 </xsd:complexContent>
   </xsd:complexType>
 

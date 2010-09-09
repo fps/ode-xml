@@ -27,7 +27,7 @@ def create_body(object, named_objects = dict()):
 def create_box_total_mass(object, named_objects = dict()):
     print "create box total mass"
     m = ode.Mass()
-    m.setBoxTotal(object.TotalMass, object.LX, object.LY, object.LZ)
+    m.setBoxTotal(float(object.M), float(object.LX), float(object.LY), float(object.LZ))
     return m
 
 

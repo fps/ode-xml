@@ -9,13 +9,6 @@
   <Body>
 	 <Name>Thing</Name>
 	 <World>Earth</World>
-
-	 <Mass xsi:type="BoxTotalMass">
-		<TotalMass>1</TotalMass>
-		<LX>1.0</LX>
-		<LY>1.0</LY>
-		<LZ>1.0</LZ>
-	 </Mass>
-
+	 <Mass xsi:type="BoxTotalMass" M="1" LX="1" LY="1" LZ="1"/>
   </Body>
 </Sim>

@@ -1264,68 +1264,81 @@ class Mass: public ::RSObject
 class BoxTotalMass: public ::Mass
 {
   public:
-  // TotalMass
+  // M
   // 
-  typedef ::xml_schema::float_ TotalMass_type;
-  typedef ::xsd::cxx::tree::traits< TotalMass_type, char > TotalMass_traits;
+  typedef ::xml_schema::float_ M_type;
+  typedef ::xsd::cxx::tree::optional< M_type > M_optional;
+  typedef ::xsd::cxx::tree::traits< M_type, char > M_traits;
 
-  const TotalMass_type&
-  TotalMass () const;
+  const M_optional&
+  M () const;
 
-  TotalMass_type&
-  TotalMass ();
+  M_optional&
+  M ();
 
   void
-  TotalMass (const TotalMass_type& x);
+  M (const M_type& x);
+
+  void
+  M (const M_optional& x);
 
   // LX
   // 
   typedef ::xml_schema::float_ LX_type;
+  typedef ::xsd::cxx::tree::optional< LX_type > LX_optional;
   typedef ::xsd::cxx::tree::traits< LX_type, char > LX_traits;
 
-  const LX_type&
+  const LX_optional&
   LX () const;
 
-  LX_type&
+  LX_optional&
   LX ();
 
   void
   LX (const LX_type& x);
 
+  void
+  LX (const LX_optional& x);
+
   // LY
   // 
   typedef ::xml_schema::float_ LY_type;
+  typedef ::xsd::cxx::tree::optional< LY_type > LY_optional;
   typedef ::xsd::cxx::tree::traits< LY_type, char > LY_traits;
 
-  const LY_type&
+  const LY_optional&
   LY () const;
 
-  LY_type&
+  LY_optional&
   LY ();
 
   void
   LY (const LY_type& x);
 
+  void
+  LY (const LY_optional& x);
+
   // LZ
   // 
   typedef ::xml_schema::float_ LZ_type;
+  typedef ::xsd::cxx::tree::optional< LZ_type > LZ_optional;
   typedef ::xsd::cxx::tree::traits< LZ_type, char > LZ_traits;
 
-  const LZ_type&
+  const LZ_optional&
   LZ () const;
 
-  LZ_type&
+  LZ_optional&
   LZ ();
 
   void
   LZ (const LZ_type& x);
 
+  void
+  LZ (const LZ_optional& x);
+
   // Constructors.
   //
-  BoxTotalMass (const TotalMass_type&,
-                const LX_type&,
-                const LY_type&,
-                const LZ_type&);
+  BoxTotalMass ();
 
   BoxTotalMass (const ::xercesc::DOMElement& e,
                 ::xml_schema::flags f = 0,
@@ -1350,10 +1363,10 @@ class BoxTotalMass: public ::Mass
          ::xml_schema::flags);
 
   protected:
-  ::xsd::cxx::tree::one< TotalMass_type > TotalMass_;
-  ::xsd::cxx::tree::one< LX_type > LX_;
-  ::xsd::cxx::tree::one< LY_type > LY_;
-  ::xsd::cxx::tree::one< LZ_type > LZ_;
+  M_optional M_;
+  LX_optional LX_;
+  LY_optional LY_;
+  LZ_optional LZ_;
 };
 
 class Joint: public ::RSObject

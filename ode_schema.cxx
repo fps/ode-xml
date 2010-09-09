@@ -1023,34 +1023,40 @@ Rotation (::std::auto_ptr< Rotation_type > x)
 // BoxTotalMass
 // 
 
-const BoxTotalMass::TotalMass_type& BoxTotalMass::
-TotalMass () const
+const BoxTotalMass::M_optional& BoxTotalMass::
+M () const
 {
-  return this->TotalMass_.get ();
+  return this->M_;
 }
 
-BoxTotalMass::TotalMass_type& BoxTotalMass::
-TotalMass ()
+BoxTotalMass::M_optional& BoxTotalMass::
+M ()
 {
-  return this->TotalMass_.get ();
+  return this->M_;
 }
 
 void BoxTotalMass::
-TotalMass (const TotalMass_type& x)
+M (const M_type& x)
 {
-  this->TotalMass_.set (x);
+  this->M_.set (x);
 }
 
-const BoxTotalMass::LX_type& BoxTotalMass::
+void BoxTotalMass::
+M (const M_optional& x)
+{
+  this->M_ = x;
+}
+
+const BoxTotalMass::LX_optional& BoxTotalMass::
 LX () const
 {
-  return this->LX_.get ();
+  return this->LX_;
 }
 
-BoxTotalMass::LX_type& BoxTotalMass::
+BoxTotalMass::LX_optional& BoxTotalMass::
 LX ()
 {
-  return this->LX_.get ();
+  return this->LX_;
 }
 
 void BoxTotalMass::
@@ -1059,16 +1065,22 @@ LX (const LX_type& x)
   this->LX_.set (x);
 }
 
-const BoxTotalMass::LY_type& BoxTotalMass::
-LY () const
+void BoxTotalMass::
+LX (const LX_optional& x)
 {
-  return this->LY_.get ();
+  this->LX_ = x;
 }
 
-BoxTotalMass::LY_type& BoxTotalMass::
+const BoxTotalMass::LY_optional& BoxTotalMass::
+LY () const
+{
+  return this->LY_;
+}
+
+BoxTotalMass::LY_optional& BoxTotalMass::
 LY ()
 {
-  return this->LY_.get ();
+  return this->LY_;
 }
 
 void BoxTotalMass::
@@ -1077,22 +1089,34 @@ LY (const LY_type& x)
   this->LY_.set (x);
 }
 
-const BoxTotalMass::LZ_type& BoxTotalMass::
-LZ () const
+void BoxTotalMass::
+LY (const LY_optional& x)
 {
-  return this->LZ_.get ();
+  this->LY_ = x;
 }
 
-BoxTotalMass::LZ_type& BoxTotalMass::
+const BoxTotalMass::LZ_optional& BoxTotalMass::
+LZ () const
+{
+  return this->LZ_;
+}
+
+BoxTotalMass::LZ_optional& BoxTotalMass::
 LZ ()
 {
-  return this->LZ_.get ();
+  return this->LZ_;
 }
 
 void BoxTotalMass::
 LZ (const LZ_type& x)
 {
   this->LZ_.set (x);
+}
+
+void BoxTotalMass::
+LZ (const LZ_optional& x)
+{
+  this->LZ_ = x;
 }
 
 
@@ -3205,15 +3229,12 @@ _xsd_Mass_type_factory_init (
 //
 
 BoxTotalMass::
-BoxTotalMass (const TotalMass_type& TotalMass,
-              const LX_type& LX,
-              const LY_type& LY,
-              const LZ_type& LZ)
+BoxTotalMass ()
 : ::Mass (),
-  TotalMass_ (TotalMass, ::xml_schema::flags (), this),
-  LX_ (LX, ::xml_schema::flags (), this),
-  LY_ (LY, ::xml_schema::flags (), this),
-  LZ_ (LZ, ::xml_schema::flags (), this)
+  M_ (::xml_schema::flags (), this),
+  LX_ (::xml_schema::flags (), this),
+  LY_ (::xml_schema::flags (), this),
+  LZ_ (::xml_schema::flags (), this)
 {
 }
 
@@ -3222,7 +3243,7 @@ BoxTotalMass (const BoxTotalMass& x,
               ::xml_schema::flags f,
               ::xml_schema::container* c)
 : ::Mass (x, f, c),
-  TotalMass_ (x.TotalMass_, f, this),
+  M_ (x.M_, f, this),
   LX_ (x.LX_, f, this),
   LY_ (x.LY_, f, this),
   LZ_ (x.LZ_, f, this)
@@ -3234,14 +3255,14 @@ BoxTotalMass (const ::xercesc::DOMElement& e,
               ::xml_schema::flags f,
               ::xml_schema::container* c)
 : ::Mass (e, f | ::xml_schema::flags::base, c),
-  TotalMass_ (f, this),
+  M_ (f, this),
   LX_ (f, this),
   LY_ (f, this),
   LZ_ (f, this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
   {
-    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, true);
     this->parse (p, f);
   }
 }
@@ -3252,85 +3273,35 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 {
   this->::Mass::parse (p, f);
 
-  for (; p.more_elements (); p.next_element ())
+  while (p.more_attributes ())
   {
-    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
     const ::xsd::cxx::xml::qualified_name< char > n (
       ::xsd::cxx::xml::dom::name< char > (i));
 
-    // TotalMass
-    //
-    if (n.name () == "TotalMass" && n.namespace_ ().empty ())
+    if (n.name () == "M" && n.namespace_ ().empty ())
     {
-      if (!TotalMass_.present ())
-      {
-        this->TotalMass_.set (TotalMass_traits::create (i, f, this));
-        continue;
-      }
+      this->M_.set (M_traits::create (i, f, this));
+      continue;
     }
 
-    // LX
-    //
     if (n.name () == "LX" && n.namespace_ ().empty ())
     {
-      if (!LX_.present ())
-      {
-        this->LX_.set (LX_traits::create (i, f, this));
-        continue;
-      }
+      this->LX_.set (LX_traits::create (i, f, this));
+      continue;
     }
 
-    // LY
-    //
     if (n.name () == "LY" && n.namespace_ ().empty ())
     {
-      if (!LY_.present ())
-      {
-        this->LY_.set (LY_traits::create (i, f, this));
-        continue;
-      }
+      this->LY_.set (LY_traits::create (i, f, this));
+      continue;
     }
 
-    // LZ
-    //
     if (n.name () == "LZ" && n.namespace_ ().empty ())
     {
-      if (!LZ_.present ())
-      {
-        this->LZ_.set (LZ_traits::create (i, f, this));
-        continue;
-      }
+      this->LZ_.set (LZ_traits::create (i, f, this));
+      continue;
     }
-
-    break;
-  }
-
-  if (!TotalMass_.present ())
-  {
-    throw ::xsd::cxx::tree::expected_element< char > (
-      "TotalMass",
-      "");
-  }
-
-  if (!LX_.present ())
-  {
-    throw ::xsd::cxx::tree::expected_element< char > (
-      "LX",
-      "");
-  }
-
-  if (!LY_.present ())
-  {
-    throw ::xsd::cxx::tree::expected_element< char > (
-      "LY",
-      "");
-  }
-
-  if (!LZ_.present ())
-  {
-    throw ::xsd::cxx::tree::expected_element< char > (
-      "LZ",
-      "");
   }
 }
 
@@ -6906,48 +6877,52 @@ operator<< (::xercesc::DOMElement& e, const BoxTotalMass& i)
 {
   e << static_cast< const ::Mass& > (i);
 
-  // TotalMass
+  // M
   //
+  if (i.M ())
   {
-    ::xercesc::DOMElement& s (
-      ::xsd::cxx::xml::dom::create_element (
-        "TotalMass",
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "M",
         e));
 
-    s << i.TotalMass ();
+    a << *i.M ();
   }
 
   // LX
   //
+  if (i.LX ())
   {
-    ::xercesc::DOMElement& s (
-      ::xsd::cxx::xml::dom::create_element (
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
         "LX",
         e));
 
-    s << i.LX ();
+    a << *i.LX ();
   }
 
   // LY
   //
+  if (i.LY ())
   {
-    ::xercesc::DOMElement& s (
-      ::xsd::cxx::xml::dom::create_element (
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
         "LY",
         e));
 
-    s << i.LY ();
+    a << *i.LY ();
   }
 
   // LZ
   //
+  if (i.LZ ())
   {
-    ::xercesc::DOMElement& s (
-      ::xsd::cxx::xml::dom::create_element (
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
         "LZ",
         e));
 
-    s << i.LZ ();
+    a << *i.LZ ();
   }
 }
 
