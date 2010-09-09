@@ -1,4 +1,4 @@
-.PHONY: install all clean
+.PHONY: install all clean reallyclean
 
 PREFIX ?= /usr
 
@@ -21,8 +21,7 @@ clean:
 	rm -f ode-schema.hxx ode-schema.cxx ode-schema.py
 
 reallyclean: clean
-	rm -f ~*
-
+	rm -f *~
 
 
 
