@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<xsd:schema 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <xsd:complexType name="RSObject">
+	 <xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+	 </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Sim">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="World" type="World" minOccurs="0" maxOccurs="unbounded"/>
+			 <xsd:element name="Space" type="SpaceBase" minOccurs="0" maxOccurs="unbounded"/>
+			 <xsd:element name="Body" type="Body" minOccurs="0" maxOccurs="unbounded"/>
+			 <xsd:element name="Geom" type="GeomObject" minOccurs="0" maxOccurs="unbounded"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Sim" type="Sim"/>
+
+  <xsd:complexType name="World">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="AutoDisableAngularThreshold" type="xsd:float" minOccurs="0"/>
+			 <xsd:element name="AutoDisableFlag" type="xsd:boolean" minOccurs="0"/>
+			 <xsd:element name="AutoDisableSteps" type="xsd:boolean" minOccurs="0"/>
+			 <xsd:element name="AutoDisableTime" type="xsd:boolean" minOccurs="0"/>
+			 <xsd:element name="CFM" type="xsd:float" minOccurs="0"/>
+			 <xsd:element name="ContactMaxCorrectingVel" type="xsd:float" minOccurs="0"/>
+			 <xsd:element name="ContactSurfaceLayer" type="xsd:float" minOccurs="0"/>
+			 <xsd:element name="ERP" type="xsd:float" minOccurs="0"/>
+			 <xsd:element name="Gravity" type="Vector" minOccurs="0"/>
+			 <xsd:element name="QuickStepNumIterations" type="xsd:nonNegativeInteger" minOccurs="0"/>
+			 <xsd:element name="Body" type="Body" minOccurs="0" maxOccurs="unbounded"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="World" type="World"/>
+
+  <xsd:complexType name="GeomObject">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="Enable" type="xsd:boolean" minOccurs="0"/>
+  			 <xsd:element name="CategoryBits" type="xsd:nonNegativeInteger" minOccurs="0"/>
+  			 <xsd:element name="CollideBits" type="xsd:nonNegativeInteger" minOccurs="0"/>
+  			 <xsd:element name="Position" type="Vector" minOccurs="0"/>
+  			 <xsd:element name="Quaternion" type="Quaternion" minOccurs="0"/>
+  			 <xsd:element name="Rotation" type="Rotation" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="SpaceBase">
+	 <xsd:complexContent>
+		<xsd:extension base="GeomObject">
+		  <xsd:sequence>
+			 <xsd:element name="Geom" type="GeomObject" minOccurs="0" maxOccurs="unbounded"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="SimpleSpace">
+	 <xsd:complexContent>
+		<xsd:extension base="SpaceBase">
+		  <xsd:sequence>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="Body">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="Space" type="xsd:string" minOccurs="0"/>
+			 <xsd:element name="World" type="xsd:string" minOccurs="0"/>
+			 <xsd:element name="Enabled" type="xsd:boolean" minOccurs="0"/>
+   		 <xsd:element name="AngularVel" type="Vector" minOccurs="0"/>
+  			 <xsd:element name="FiniteRotationAxis" type="Vector" minOccurs="0"/>
+  			 <xsd:element name="FiniteRotationMode" type="xsd:nonNegativeInteger" minOccurs="0"/>
+  			 <xsd:element name="Force" type="Vector" minOccurs="0"/>
+  			 <xsd:element name="GravityMode" type="xsd:boolean" minOccurs="0"/>
+  			 <xsd:element name="LinearVel" type="Vector" minOccurs="0"/>
+  			 <xsd:element name="Mass" type="Mass" minOccurs="0"/>
+  			 <xsd:element name="Torque" type="Vector" minOccurs="0"/>
+  			 <xsd:element name="Position" type="Vector" minOccurs="0"/>
+  			 <xsd:element name="Quaternion" type="Quaternion" minOccurs="0"/>
+  			 <xsd:element name="Rotation" type="Rotation" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Body" type="Body"/>
+
+  <xsd:complexType name="Mass">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="BoxTotalMass">
+	 <xsd:complexContent>
+		<xsd:extension base="Mass">
+		  <xsd:sequence>
+			 <xsd:element name="TotalMass" type="xsd:float"/>
+			 <xsd:element name="LX" type="xsd:float"/>
+			 <xsd:element name="LY" type="xsd:float"/>
+			 <xsd:element name="LZ" type="xsd:float"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="Joint">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="Feedback" type="xsd:boolean" minOccurs="0"/>
+			 <xsd:element name="Body1" type="xsd:string" minOccurs="0"/>
+			 <xsd:element name="Body2" type="xsd:string" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="HingeJoint">
+	 <xsd:complexContent>
+		<xsd:extension base="Joint">
+		  <xsd:sequence>
+ 			 <xsd:element name="Anchor" type="Vector" minOccurs="0"/>
+ 			 <xsd:element name="Axis" type="Vector" minOccurs="0"/>
+ 			 <xsd:element name="Torque" type="xsd:float" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="GeomBox">
+	 <xsd:complexContent>
+		<xsd:extension base="GeomObject">
+		  <xsd:sequence>
+			 <xsd:element name="Lengths" type="Vector" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="GeomCylinder">
+	 <xsd:complexContent>
+		<xsd:extension base="GeomObject">
+		  <xsd:sequence>
+			 <xsd:element name="Length" type="xsd:float" minOccurs="0"/>
+			 <xsd:element name="Radius" type="xsd:float" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="GeomCapsule">
+	 <xsd:complexContent>
+		<xsd:extension base="GeomObject">
+		  <xsd:sequence>
+			 <xsd:element name="Length" type="xsd:float" minOccurs="0"/>
+			 <xsd:element name="Radius" type="xsd:float" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="GeomSphere">
+	 <xsd:complexContent>
+		<xsd:extension base="GeomObject">
+		  <xsd:sequence>
+			 <xsd:element name="Radius" type="xsd:float" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="GeomPlane">
+	 <xsd:complexContent>
+		<xsd:extension base="GeomObject">
+		  <xsd:sequence>
+			 <xsd:element name="Space" type="xsd:string" minOccurs="0"/>
+			 <xsd:element name="Body" type="xsd:string" minOccurs="0"/>
+			 <xsd:element name="Enabled" type="xsd:boolean" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="Rotation">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="Column1" type="Vector"/>
+			 <xsd:element name="Column2" type="Vector"/>
+			 <xsd:element name="Column3" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="Vector">
+	 <xsd:attribute name="X" type="xsd:float"/>
+	 <xsd:attribute name="Y" type="xsd:float"/>
+	 <xsd:attribute name="Z" type="xsd:float"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="Quaternion">
+	 <xsd:attribute name="W" type="xsd:float"/>
+	 <xsd:attribute name="I" type="xsd:float"/>
+	 <xsd:attribute name="J" type="xsd:float"/>
+	 <xsd:attribute name="K" type="xsd:float"/>
+  </xsd:complexType>
+
+<!--
+  <xsd:complexType name="Vector">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="X" type="xsd:float"/>
+			 <xsd:element name="Y" type="xsd:float"/>
+			 <xsd:element name="Z" type="xsd:float"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="Quaternion">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+			 <xsd:element name="W" type="xsd:float"/>
+			 <xsd:element name="I" type="xsd:float"/>
+			 <xsd:element name="J" type="xsd:float"/>
+			 <xsd:element name="K" type="xsd:float"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+-->
+
+  <xsd:complexType name="Foo">
+	 <xsd:complexContent>
+		<xsd:extension base="RSObject">
+		  <xsd:sequence>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+</xsd:schema>
