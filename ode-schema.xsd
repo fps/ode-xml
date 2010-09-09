@@ -38,7 +38,7 @@
 			 <xsd:element name="ERP" type="xsd:float" minOccurs="0"/>
 			 <xsd:element name="Gravity" type="Vector" minOccurs="0"/>
 			 <xsd:element name="QuickStepNumIterations" type="xsd:nonNegativeInteger" minOccurs="0"/>
-			 <xsd:element name="Body" type="Body" minOccurs="0" maxOccurs="unbounded"/>
+			 <xsd:element name="Body" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
 		  </xsd:sequence>
 		</xsd:extension>
 	 </xsd:complexContent>
