@@ -258,6 +258,7 @@ class Mass;
 class BoxTotalMass;
 class Joint;
 class HingeJoint;
+class HingeJoint2;
 class GeomBox;
 class GeomCylinder;
 class GeomCapsule;
@@ -267,6 +268,52 @@ class Rotation;
 class Vector;
 class Quaternion;
 class Foo;
+class Param;
+class paramBounce;
+class ParamBounce;
+class ParamBounce2;
+class ParamBounce3;
+class paramCFM;
+class ParamCFM;
+class ParamCFM2;
+class ParamCFM3;
+class paramFMax;
+class ParamFMax;
+class ParamFMax2;
+class ParamFMax3;
+class paramFudgeFactor;
+class ParamFudgeFactor;
+class ParamFudgeFactor2;
+class ParamFudgeFactor3;
+class ParamGroup;
+class paramHiStop;
+class ParamHiStop;
+class ParamHiStop2;
+class ParamHiStop3;
+class paramLoStop;
+class ParamLoStop;
+class ParamLoStop2;
+class ParamLoStop3;
+class paramStopCFM;
+class ParamStopCFM;
+class ParamStopCFM2;
+class ParamStopCFM3;
+class paramStopERP;
+class ParamStopERP;
+class ParamStopERP2;
+class ParamStopERP3;
+class paramSuspensionCFM;
+class ParamSuspensionCFM;
+class ParamSuspensionCFM2;
+class ParamSuspensionCFM3;
+class paramSuspensionERP;
+class ParamSuspensionERP;
+class ParamSuspensionERP2;
+class ParamSuspensionERP3;
+class paramVel;
+class ParamVel;
+class ParamVel2;
+class ParamVel3;
 
 #include <memory>    // std::auto_ptr
 #include <algorithm> // std::binary_search
@@ -1432,6 +1479,23 @@ class Joint: public ::RSObject
   void
   Body2 (::std::auto_ptr< Body2_type > p);
 
+  // Param
+  // 
+  typedef ::Param Param_type;
+  typedef ::xsd::cxx::tree::sequence< Param_type > Param_sequence;
+  typedef Param_sequence::iterator Param_iterator;
+  typedef Param_sequence::const_iterator Param_const_iterator;
+  typedef ::xsd::cxx::tree::traits< Param_type, char > Param_traits;
+
+  const Param_sequence&
+  Param () const;
+
+  Param_sequence&
+  Param ();
+
+  void
+  Param (const Param_sequence& s);
+
   // Constructors.
   //
   Joint ();
@@ -1462,6 +1526,7 @@ class Joint: public ::RSObject
   Feedback_optional Feedback_;
   Body1_optional Body1_;
   Body2_optional Body2_;
+  Param_sequence Param_;
 };
 
 class HingeJoint: public ::Joint
@@ -1556,6 +1621,123 @@ class HingeJoint: public ::Joint
   protected:
   Anchor_optional Anchor_;
   Axis_optional Axis_;
+  Torque_optional Torque_;
+};
+
+class HingeJoint2: public ::Joint
+{
+  public:
+  // Anchor
+  // 
+  typedef ::Vector Anchor_type;
+  typedef ::xsd::cxx::tree::optional< Anchor_type > Anchor_optional;
+  typedef ::xsd::cxx::tree::traits< Anchor_type, char > Anchor_traits;
+
+  const Anchor_optional&
+  Anchor () const;
+
+  Anchor_optional&
+  Anchor ();
+
+  void
+  Anchor (const Anchor_type& x);
+
+  void
+  Anchor (const Anchor_optional& x);
+
+  void
+  Anchor (::std::auto_ptr< Anchor_type > p);
+
+  // Axis1
+  // 
+  typedef ::Vector Axis1_type;
+  typedef ::xsd::cxx::tree::optional< Axis1_type > Axis1_optional;
+  typedef ::xsd::cxx::tree::traits< Axis1_type, char > Axis1_traits;
+
+  const Axis1_optional&
+  Axis1 () const;
+
+  Axis1_optional&
+  Axis1 ();
+
+  void
+  Axis1 (const Axis1_type& x);
+
+  void
+  Axis1 (const Axis1_optional& x);
+
+  void
+  Axis1 (::std::auto_ptr< Axis1_type > p);
+
+  // Axis2
+  // 
+  typedef ::Vector Axis2_type;
+  typedef ::xsd::cxx::tree::optional< Axis2_type > Axis2_optional;
+  typedef ::xsd::cxx::tree::traits< Axis2_type, char > Axis2_traits;
+
+  const Axis2_optional&
+  Axis2 () const;
+
+  Axis2_optional&
+  Axis2 ();
+
+  void
+  Axis2 (const Axis2_type& x);
+
+  void
+  Axis2 (const Axis2_optional& x);
+
+  void
+  Axis2 (::std::auto_ptr< Axis2_type > p);
+
+  // Torque
+  // 
+  typedef ::xml_schema::float_ Torque_type;
+  typedef ::xsd::cxx::tree::optional< Torque_type > Torque_optional;
+  typedef ::xsd::cxx::tree::traits< Torque_type, char > Torque_traits;
+
+  const Torque_optional&
+  Torque () const;
+
+  Torque_optional&
+  Torque ();
+
+  void
+  Torque (const Torque_type& x);
+
+  void
+  Torque (const Torque_optional& x);
+
+  // Constructors.
+  //
+  HingeJoint2 ();
+
+  HingeJoint2 (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  HingeJoint2 (const HingeJoint2& x,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  virtual HingeJoint2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~HingeJoint2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Anchor_optional Anchor_;
+  Axis1_optional Axis1_;
+  Axis2_optional Axis2_;
   Torque_optional Torque_;
 };
 
@@ -2211,6 +2393,2344 @@ class Foo: public ::RSObject
   ~Foo ();
 };
 
+class Param: public ::xml_schema::type
+{
+  public:
+  // Constructors.
+  //
+  Param ();
+
+  Param (const ::xercesc::DOMElement& e,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
+
+  Param (const ::xercesc::DOMAttr& a,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
+
+  Param (const ::std::string& s,
+         const ::xercesc::DOMElement* e,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
+
+  Param (const Param& x,
+         ::xml_schema::flags f = 0,
+         ::xml_schema::container* c = 0);
+
+  virtual Param*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~Param ();
+};
+
+class paramBounce: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramBounce (const Value_type&);
+
+  paramBounce (::std::auto_ptr< Value_type >&);
+
+  paramBounce (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  paramBounce (const paramBounce& x,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  virtual paramBounce*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramBounce ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamBounce: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamBounce ();
+
+  ParamBounce (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  ParamBounce (const ParamBounce& x,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  virtual ParamBounce*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamBounce ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamBounce2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamBounce2 ();
+
+  ParamBounce2 (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamBounce2 (const ParamBounce2& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamBounce2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamBounce2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamBounce3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamBounce3 ();
+
+  ParamBounce3 (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamBounce3 (const ParamBounce3& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamBounce3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamBounce3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramCFM: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramCFM (const Value_type&);
+
+  paramCFM (::std::auto_ptr< Value_type >&);
+
+  paramCFM (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  paramCFM (const paramCFM& x,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  virtual paramCFM*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramCFM ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamCFM: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamCFM ();
+
+  ParamCFM (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  ParamCFM (const ParamCFM& x,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  virtual ParamCFM*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamCFM ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamCFM2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamCFM2 ();
+
+  ParamCFM2 (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  ParamCFM2 (const ParamCFM2& x,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  virtual ParamCFM2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamCFM2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamCFM3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamCFM3 ();
+
+  ParamCFM3 (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  ParamCFM3 (const ParamCFM3& x,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  virtual ParamCFM3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamCFM3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramFMax: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramFMax (const Value_type&);
+
+  paramFMax (::std::auto_ptr< Value_type >&);
+
+  paramFMax (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  paramFMax (const paramFMax& x,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  virtual paramFMax*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramFMax ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamFMax: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamFMax ();
+
+  ParamFMax (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  ParamFMax (const ParamFMax& x,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  virtual ParamFMax*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamFMax ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamFMax2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamFMax2 ();
+
+  ParamFMax2 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+  ParamFMax2 (const ParamFMax2& x,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+  virtual ParamFMax2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamFMax2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamFMax3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamFMax3 ();
+
+  ParamFMax3 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+  ParamFMax3 (const ParamFMax3& x,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+  virtual ParamFMax3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamFMax3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramFudgeFactor: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramFudgeFactor (const Value_type&);
+
+  paramFudgeFactor (::std::auto_ptr< Value_type >&);
+
+  paramFudgeFactor (const ::xercesc::DOMElement& e,
+                    ::xml_schema::flags f = 0,
+                    ::xml_schema::container* c = 0);
+
+  paramFudgeFactor (const paramFudgeFactor& x,
+                    ::xml_schema::flags f = 0,
+                    ::xml_schema::container* c = 0);
+
+  virtual paramFudgeFactor*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramFudgeFactor ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamFudgeFactor: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamFudgeFactor ();
+
+  ParamFudgeFactor (const ::xercesc::DOMElement& e,
+                    ::xml_schema::flags f = 0,
+                    ::xml_schema::container* c = 0);
+
+  ParamFudgeFactor (const ParamFudgeFactor& x,
+                    ::xml_schema::flags f = 0,
+                    ::xml_schema::container* c = 0);
+
+  virtual ParamFudgeFactor*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamFudgeFactor ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamFudgeFactor2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamFudgeFactor2 ();
+
+  ParamFudgeFactor2 (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+  ParamFudgeFactor2 (const ParamFudgeFactor2& x,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+  virtual ParamFudgeFactor2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamFudgeFactor2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamFudgeFactor3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamFudgeFactor3 ();
+
+  ParamFudgeFactor3 (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+  ParamFudgeFactor3 (const ParamFudgeFactor3& x,
+                     ::xml_schema::flags f = 0,
+                     ::xml_schema::container* c = 0);
+
+  virtual ParamFudgeFactor3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamFudgeFactor3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamGroup: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamGroup ();
+
+  ParamGroup (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+  ParamGroup (const ParamGroup& x,
+              ::xml_schema::flags f = 0,
+              ::xml_schema::container* c = 0);
+
+  virtual ParamGroup*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamGroup ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramHiStop: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramHiStop (const Value_type&);
+
+  paramHiStop (::std::auto_ptr< Value_type >&);
+
+  paramHiStop (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  paramHiStop (const paramHiStop& x,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  virtual paramHiStop*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramHiStop ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamHiStop: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamHiStop ();
+
+  ParamHiStop (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  ParamHiStop (const ParamHiStop& x,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  virtual ParamHiStop*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamHiStop ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamHiStop2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamHiStop2 ();
+
+  ParamHiStop2 (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamHiStop2 (const ParamHiStop2& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamHiStop2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamHiStop2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamHiStop3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamHiStop3 ();
+
+  ParamHiStop3 (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamHiStop3 (const ParamHiStop3& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamHiStop3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamHiStop3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramLoStop: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramLoStop (const Value_type&);
+
+  paramLoStop (::std::auto_ptr< Value_type >&);
+
+  paramLoStop (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  paramLoStop (const paramLoStop& x,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  virtual paramLoStop*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramLoStop ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamLoStop: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamLoStop ();
+
+  ParamLoStop (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  ParamLoStop (const ParamLoStop& x,
+               ::xml_schema::flags f = 0,
+               ::xml_schema::container* c = 0);
+
+  virtual ParamLoStop*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamLoStop ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamLoStop2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamLoStop2 ();
+
+  ParamLoStop2 (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamLoStop2 (const ParamLoStop2& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamLoStop2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamLoStop2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamLoStop3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamLoStop3 ();
+
+  ParamLoStop3 (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamLoStop3 (const ParamLoStop3& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamLoStop3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamLoStop3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramStopCFM: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramStopCFM (const Value_type&);
+
+  paramStopCFM (::std::auto_ptr< Value_type >&);
+
+  paramStopCFM (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  paramStopCFM (const paramStopCFM& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual paramStopCFM*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramStopCFM ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamStopCFM: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamStopCFM ();
+
+  ParamStopCFM (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamStopCFM (const ParamStopCFM& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamStopCFM*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamStopCFM ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamStopCFM2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamStopCFM2 ();
+
+  ParamStopCFM2 (const ::xercesc::DOMElement& e,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  ParamStopCFM2 (const ParamStopCFM2& x,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  virtual ParamStopCFM2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamStopCFM2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamStopCFM3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamStopCFM3 ();
+
+  ParamStopCFM3 (const ::xercesc::DOMElement& e,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  ParamStopCFM3 (const ParamStopCFM3& x,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  virtual ParamStopCFM3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamStopCFM3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramStopERP: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramStopERP (const Value_type&);
+
+  paramStopERP (::std::auto_ptr< Value_type >&);
+
+  paramStopERP (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  paramStopERP (const paramStopERP& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual paramStopERP*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramStopERP ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamStopERP: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamStopERP ();
+
+  ParamStopERP (const ::xercesc::DOMElement& e,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  ParamStopERP (const ParamStopERP& x,
+                ::xml_schema::flags f = 0,
+                ::xml_schema::container* c = 0);
+
+  virtual ParamStopERP*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamStopERP ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamStopERP2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamStopERP2 ();
+
+  ParamStopERP2 (const ::xercesc::DOMElement& e,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  ParamStopERP2 (const ParamStopERP2& x,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  virtual ParamStopERP2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamStopERP2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamStopERP3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamStopERP3 ();
+
+  ParamStopERP3 (const ::xercesc::DOMElement& e,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  ParamStopERP3 (const ParamStopERP3& x,
+                 ::xml_schema::flags f = 0,
+                 ::xml_schema::container* c = 0);
+
+  virtual ParamStopERP3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamStopERP3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramSuspensionCFM: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramSuspensionCFM (const Value_type&);
+
+  paramSuspensionCFM (::std::auto_ptr< Value_type >&);
+
+  paramSuspensionCFM (const ::xercesc::DOMElement& e,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  paramSuspensionCFM (const paramSuspensionCFM& x,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  virtual paramSuspensionCFM*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramSuspensionCFM ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamSuspensionCFM: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamSuspensionCFM ();
+
+  ParamSuspensionCFM (const ::xercesc::DOMElement& e,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  ParamSuspensionCFM (const ParamSuspensionCFM& x,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  virtual ParamSuspensionCFM*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamSuspensionCFM ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamSuspensionCFM2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamSuspensionCFM2 ();
+
+  ParamSuspensionCFM2 (const ::xercesc::DOMElement& e,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  ParamSuspensionCFM2 (const ParamSuspensionCFM2& x,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  virtual ParamSuspensionCFM2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamSuspensionCFM2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamSuspensionCFM3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamSuspensionCFM3 ();
+
+  ParamSuspensionCFM3 (const ::xercesc::DOMElement& e,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  ParamSuspensionCFM3 (const ParamSuspensionCFM3& x,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  virtual ParamSuspensionCFM3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamSuspensionCFM3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramSuspensionERP: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramSuspensionERP (const Value_type&);
+
+  paramSuspensionERP (::std::auto_ptr< Value_type >&);
+
+  paramSuspensionERP (const ::xercesc::DOMElement& e,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  paramSuspensionERP (const paramSuspensionERP& x,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  virtual paramSuspensionERP*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramSuspensionERP ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamSuspensionERP: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamSuspensionERP ();
+
+  ParamSuspensionERP (const ::xercesc::DOMElement& e,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  ParamSuspensionERP (const ParamSuspensionERP& x,
+                      ::xml_schema::flags f = 0,
+                      ::xml_schema::container* c = 0);
+
+  virtual ParamSuspensionERP*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamSuspensionERP ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamSuspensionERP2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamSuspensionERP2 ();
+
+  ParamSuspensionERP2 (const ::xercesc::DOMElement& e,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  ParamSuspensionERP2 (const ParamSuspensionERP2& x,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  virtual ParamSuspensionERP2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamSuspensionERP2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamSuspensionERP3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamSuspensionERP3 ();
+
+  ParamSuspensionERP3 (const ::xercesc::DOMElement& e,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  ParamSuspensionERP3 (const ParamSuspensionERP3& x,
+                       ::xml_schema::flags f = 0,
+                       ::xml_schema::container* c = 0);
+
+  virtual ParamSuspensionERP3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamSuspensionERP3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class paramVel: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::Vector Value_type;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_type&
+  Value () const;
+
+  Value_type&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (::std::auto_ptr< Value_type > p);
+
+  // Constructors.
+  //
+  paramVel (const Value_type&);
+
+  paramVel (::std::auto_ptr< Value_type >&);
+
+  paramVel (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  paramVel (const paramVel& x,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  virtual paramVel*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~paramVel ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  ::xsd::cxx::tree::one< Value_type > Value_;
+};
+
+class ParamVel: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamVel ();
+
+  ParamVel (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  ParamVel (const ParamVel& x,
+            ::xml_schema::flags f = 0,
+            ::xml_schema::container* c = 0);
+
+  virtual ParamVel*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamVel ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamVel2: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamVel2 ();
+
+  ParamVel2 (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  ParamVel2 (const ParamVel2& x,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  virtual ParamVel2*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamVel2 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
+class ParamVel3: public ::Param
+{
+  public:
+  // Value
+  // 
+  typedef ::xml_schema::float_ Value_type;
+  typedef ::xsd::cxx::tree::optional< Value_type > Value_optional;
+  typedef ::xsd::cxx::tree::traits< Value_type, char > Value_traits;
+
+  const Value_optional&
+  Value () const;
+
+  Value_optional&
+  Value ();
+
+  void
+  Value (const Value_type& x);
+
+  void
+  Value (const Value_optional& x);
+
+  // Constructors.
+  //
+  ParamVel3 ();
+
+  ParamVel3 (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  ParamVel3 (const ParamVel3& x,
+             ::xml_schema::flags f = 0,
+             ::xml_schema::container* c = 0);
+
+  virtual ParamVel3*
+  _clone (::xml_schema::flags f = 0,
+          ::xml_schema::container* c = 0) const;
+
+  virtual 
+  ~ParamVel3 ();
+
+  // Implementation.
+  //
+  protected:
+  void
+  parse (::xsd::cxx::xml::dom::parser< char >&,
+         ::xml_schema::flags);
+
+  protected:
+  Value_optional Value_;
+};
+
 #include <iosfwd>
 
 #include <xercesc/sax/InputSource.hpp>
@@ -2406,6 +4926,99 @@ World_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
 // Parse a URI or a local file.
 //
 
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::std::string& uri,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::std::string& uri,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::std::string& uri,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              const ::std::string& id,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              const ::std::string& id,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              const ::std::string& id,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xercesc::InputSource& is,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xercesc::InputSource& is,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xercesc::InputSource& is,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::xercesc::DOMDocument& d,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
 ::std::auto_ptr< ::Body >
 Body_ (const ::std::string& uri,
        ::xml_schema::flags f = 0,
@@ -2495,6 +5108,843 @@ Body_ (const ::xercesc::DOMDocument& d,
 Body_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
        ::xml_schema::flags f = 0,
        const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::std::string& uri,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::std::string& uri,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::std::string& uri,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             const ::std::string& id,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             const ::std::string& id,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             const ::std::string& id,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xercesc::InputSource& is,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xercesc::InputSource& is,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xercesc::InputSource& is,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::xercesc::DOMDocument& d,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::std::string& uri,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::std::string& uri,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::std::string& uri,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              const ::std::string& id,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              const ::std::string& id,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              const ::std::string& id,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xercesc::InputSource& is,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xercesc::InputSource& is,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xercesc::InputSource& is,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::xercesc::DOMDocument& d,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::std::string& uri,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::std::string& uri,
+               ::xml_schema::error_handler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::std::string& uri,
+               ::xercesc::DOMErrorHandler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               ::xml_schema::error_handler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               ::xercesc::DOMErrorHandler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               const ::std::string& id,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               const ::std::string& id,
+               ::xml_schema::error_handler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               const ::std::string& id,
+               ::xercesc::DOMErrorHandler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xercesc::InputSource& is,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xercesc::InputSource& is,
+               ::xml_schema::error_handler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xercesc::InputSource& is,
+               ::xercesc::DOMErrorHandler& eh,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::xercesc::DOMDocument& d,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+               ::xml_schema::flags f = 0,
+               const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::std::string& uri,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::std::string& uri,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::std::string& uri,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              const ::std::string& id,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              const ::std::string& id,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              const ::std::string& id,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xercesc::InputSource& is,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xercesc::InputSource& is,
+              ::xml_schema::error_handler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xercesc::InputSource& is,
+              ::xercesc::DOMErrorHandler& eh,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::xercesc::DOMDocument& d,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+              ::xml_schema::flags f = 0,
+              const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::std::string& uri,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::std::string& uri,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::std::string& uri,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             const ::std::string& id,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             const ::std::string& id,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             const ::std::string& id,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xercesc::InputSource& is,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xercesc::InputSource& is,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xercesc::InputSource& is,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::xercesc::DOMDocument& d,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::std::string& uri,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::std::string& uri,
+            ::xml_schema::error_handler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::std::string& uri,
+            ::xercesc::DOMErrorHandler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            ::xml_schema::error_handler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            ::xercesc::DOMErrorHandler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            const ::std::string& id,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            const ::std::string& id,
+            ::xml_schema::error_handler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            const ::std::string& id,
+            ::xercesc::DOMErrorHandler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xercesc::InputSource& is,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xercesc::InputSource& is,
+            ::xml_schema::error_handler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xercesc::InputSource& is,
+            ::xercesc::DOMErrorHandler& eh,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::xercesc::DOMDocument& d,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+            ::xml_schema::flags f = 0,
+            const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::std::string& uri,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::std::string& uri,
+           ::xml_schema::error_handler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::std::string& uri,
+           ::xercesc::DOMErrorHandler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           ::xml_schema::error_handler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           ::xercesc::DOMErrorHandler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           const ::std::string& id,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           const ::std::string& id,
+           ::xml_schema::error_handler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           const ::std::string& id,
+           ::xercesc::DOMErrorHandler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xercesc::InputSource& is,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xercesc::InputSource& is,
+           ::xml_schema::error_handler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xercesc::InputSource& is,
+           ::xercesc::DOMErrorHandler& eh,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::xercesc::DOMDocument& d,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+           ::xml_schema::flags f = 0,
+           const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::std::string& uri,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::std::string& uri,
+         ::xml_schema::error_handler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::std::string& uri,
+         ::xercesc::DOMErrorHandler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         ::xml_schema::error_handler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         ::xercesc::DOMErrorHandler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         const ::std::string& id,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         const ::std::string& id,
+         ::xml_schema::error_handler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         const ::std::string& id,
+         ::xercesc::DOMErrorHandler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xercesc::InputSource& is,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xercesc::InputSource& is,
+         ::xml_schema::error_handler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xercesc::InputSource& is,
+         ::xercesc::DOMErrorHandler& eh,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::xercesc::DOMDocument& d,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+         ::xml_schema::flags f = 0,
+         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse a URI or a local file.
+//
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::std::string& uri,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::std::string& uri,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::std::string& uri,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse std::istream.
+//
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             const ::std::string& id,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             const ::std::string& id,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             const ::std::string& id,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::InputSource.
+//
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xercesc::InputSource& is,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xercesc::InputSource& is,
+             ::xml_schema::error_handler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xercesc::InputSource& is,
+             ::xercesc::DOMErrorHandler& eh,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+// Parse xercesc::DOMDocument.
+//
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::xercesc::DOMDocument& d,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+             ::xml_schema::flags f = 0,
+             const ::xml_schema::properties& p = ::xml_schema::properties ());
 
 #include <iosfwd>
 
@@ -2658,6 +6108,74 @@ operator<< (::xercesc::DOMElement&, const SpaceBase&);
 void
 operator<< (::xercesc::DOMElement&, const SimpleSpace&);
 
+// Serialize to std::ostream.
+//
+
+void
+SimpleSpace_ (::std::ostream& os,
+              const ::SimpleSpace& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+SimpleSpace_ (::std::ostream& os,
+              const ::SimpleSpace& x, 
+              ::xml_schema::error_handler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+SimpleSpace_ (::std::ostream& os,
+              const ::SimpleSpace& x, 
+              ::xercesc::DOMErrorHandler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+SimpleSpace_ (::xercesc::XMLFormatTarget& ft,
+              const ::SimpleSpace& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+SimpleSpace_ (::xercesc::XMLFormatTarget& ft,
+              const ::SimpleSpace& x, 
+              ::xml_schema::error_handler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+SimpleSpace_ (::xercesc::XMLFormatTarget& ft,
+              const ::SimpleSpace& x, 
+              ::xercesc::DOMErrorHandler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+SimpleSpace_ (::xercesc::DOMDocument& d,
+              const ::SimpleSpace& x,
+              ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+SimpleSpace_ (const ::SimpleSpace& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              ::xml_schema::flags f = 0);
+
 void
 operator<< (::xercesc::DOMElement&, const Body&);
 
@@ -2741,32 +6259,792 @@ operator<< (::xercesc::DOMElement&, const Joint&);
 void
 operator<< (::xercesc::DOMElement&, const HingeJoint&);
 
+// Serialize to std::ostream.
+//
+
+void
+HingeJoint_ (::std::ostream& os,
+             const ::HingeJoint& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+HingeJoint_ (::std::ostream& os,
+             const ::HingeJoint& x, 
+             ::xml_schema::error_handler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+HingeJoint_ (::std::ostream& os,
+             const ::HingeJoint& x, 
+             ::xercesc::DOMErrorHandler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+HingeJoint_ (::xercesc::XMLFormatTarget& ft,
+             const ::HingeJoint& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+HingeJoint_ (::xercesc::XMLFormatTarget& ft,
+             const ::HingeJoint& x, 
+             ::xml_schema::error_handler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+HingeJoint_ (::xercesc::XMLFormatTarget& ft,
+             const ::HingeJoint& x, 
+             ::xercesc::DOMErrorHandler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+HingeJoint_ (::xercesc::DOMDocument& d,
+             const ::HingeJoint& x,
+             ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+HingeJoint_ (const ::HingeJoint& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             ::xml_schema::flags f = 0);
+
+void
+operator<< (::xercesc::DOMElement&, const HingeJoint2&);
+
+// Serialize to std::ostream.
+//
+
+void
+HingeJoint2_ (::std::ostream& os,
+              const ::HingeJoint2& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+HingeJoint2_ (::std::ostream& os,
+              const ::HingeJoint2& x, 
+              ::xml_schema::error_handler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+HingeJoint2_ (::std::ostream& os,
+              const ::HingeJoint2& x, 
+              ::xercesc::DOMErrorHandler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+HingeJoint2_ (::xercesc::XMLFormatTarget& ft,
+              const ::HingeJoint2& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+HingeJoint2_ (::xercesc::XMLFormatTarget& ft,
+              const ::HingeJoint2& x, 
+              ::xml_schema::error_handler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+HingeJoint2_ (::xercesc::XMLFormatTarget& ft,
+              const ::HingeJoint2& x, 
+              ::xercesc::DOMErrorHandler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+HingeJoint2_ (::xercesc::DOMDocument& d,
+              const ::HingeJoint2& x,
+              ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+HingeJoint2_ (const ::HingeJoint2& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              ::xml_schema::flags f = 0);
+
 void
 operator<< (::xercesc::DOMElement&, const GeomBox&);
 
 void
 operator<< (::xercesc::DOMElement&, const GeomCylinder&);
 
+// Serialize to std::ostream.
+//
+
+void
+GeomCylinder_ (::std::ostream& os,
+               const ::GeomCylinder& x, 
+               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+               const ::std::string& e = "UTF-8",
+               ::xml_schema::flags f = 0);
+
+void
+GeomCylinder_ (::std::ostream& os,
+               const ::GeomCylinder& x, 
+               ::xml_schema::error_handler& eh,
+               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+               const ::std::string& e = "UTF-8",
+               ::xml_schema::flags f = 0);
+
+void
+GeomCylinder_ (::std::ostream& os,
+               const ::GeomCylinder& x, 
+               ::xercesc::DOMErrorHandler& eh,
+               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+               const ::std::string& e = "UTF-8",
+               ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+GeomCylinder_ (::xercesc::XMLFormatTarget& ft,
+               const ::GeomCylinder& x, 
+               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+               const ::std::string& e = "UTF-8",
+               ::xml_schema::flags f = 0);
+
+void
+GeomCylinder_ (::xercesc::XMLFormatTarget& ft,
+               const ::GeomCylinder& x, 
+               ::xml_schema::error_handler& eh,
+               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+               const ::std::string& e = "UTF-8",
+               ::xml_schema::flags f = 0);
+
+void
+GeomCylinder_ (::xercesc::XMLFormatTarget& ft,
+               const ::GeomCylinder& x, 
+               ::xercesc::DOMErrorHandler& eh,
+               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+               const ::std::string& e = "UTF-8",
+               ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+GeomCylinder_ (::xercesc::DOMDocument& d,
+               const ::GeomCylinder& x,
+               ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomCylinder_ (const ::GeomCylinder& x, 
+               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+               ::xml_schema::flags f = 0);
+
 void
 operator<< (::xercesc::DOMElement&, const GeomCapsule&);
+
+// Serialize to std::ostream.
+//
+
+void
+GeomCapsule_ (::std::ostream& os,
+              const ::GeomCapsule& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+GeomCapsule_ (::std::ostream& os,
+              const ::GeomCapsule& x, 
+              ::xml_schema::error_handler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+GeomCapsule_ (::std::ostream& os,
+              const ::GeomCapsule& x, 
+              ::xercesc::DOMErrorHandler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+GeomCapsule_ (::xercesc::XMLFormatTarget& ft,
+              const ::GeomCapsule& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+GeomCapsule_ (::xercesc::XMLFormatTarget& ft,
+              const ::GeomCapsule& x, 
+              ::xml_schema::error_handler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+void
+GeomCapsule_ (::xercesc::XMLFormatTarget& ft,
+              const ::GeomCapsule& x, 
+              ::xercesc::DOMErrorHandler& eh,
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              const ::std::string& e = "UTF-8",
+              ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+GeomCapsule_ (::xercesc::DOMDocument& d,
+              const ::GeomCapsule& x,
+              ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomCapsule_ (const ::GeomCapsule& x, 
+              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+              ::xml_schema::flags f = 0);
 
 void
 operator<< (::xercesc::DOMElement&, const GeomSphere&);
 
+// Serialize to std::ostream.
+//
+
+void
+GeomSphere_ (::std::ostream& os,
+             const ::GeomSphere& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+GeomSphere_ (::std::ostream& os,
+             const ::GeomSphere& x, 
+             ::xml_schema::error_handler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+GeomSphere_ (::std::ostream& os,
+             const ::GeomSphere& x, 
+             ::xercesc::DOMErrorHandler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+GeomSphere_ (::xercesc::XMLFormatTarget& ft,
+             const ::GeomSphere& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+GeomSphere_ (::xercesc::XMLFormatTarget& ft,
+             const ::GeomSphere& x, 
+             ::xml_schema::error_handler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+GeomSphere_ (::xercesc::XMLFormatTarget& ft,
+             const ::GeomSphere& x, 
+             ::xercesc::DOMErrorHandler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+GeomSphere_ (::xercesc::DOMDocument& d,
+             const ::GeomSphere& x,
+             ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomSphere_ (const ::GeomSphere& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             ::xml_schema::flags f = 0);
+
 void
 operator<< (::xercesc::DOMElement&, const GeomPlane&);
+
+// Serialize to std::ostream.
+//
+
+void
+GeomPlane_ (::std::ostream& os,
+            const ::GeomPlane& x, 
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+GeomPlane_ (::std::ostream& os,
+            const ::GeomPlane& x, 
+            ::xml_schema::error_handler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+GeomPlane_ (::std::ostream& os,
+            const ::GeomPlane& x, 
+            ::xercesc::DOMErrorHandler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+GeomPlane_ (::xercesc::XMLFormatTarget& ft,
+            const ::GeomPlane& x, 
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+GeomPlane_ (::xercesc::XMLFormatTarget& ft,
+            const ::GeomPlane& x, 
+            ::xml_schema::error_handler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+void
+GeomPlane_ (::xercesc::XMLFormatTarget& ft,
+            const ::GeomPlane& x, 
+            ::xercesc::DOMErrorHandler& eh,
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            const ::std::string& e = "UTF-8",
+            ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+GeomPlane_ (::xercesc::DOMDocument& d,
+            const ::GeomPlane& x,
+            ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomPlane_ (const ::GeomPlane& x, 
+            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+            ::xml_schema::flags f = 0);
 
 void
 operator<< (::xercesc::DOMElement&, const Rotation&);
 
+// Serialize to std::ostream.
+//
+
+void
+Rotation_ (::std::ostream& os,
+           const ::Rotation& x, 
+           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+           const ::std::string& e = "UTF-8",
+           ::xml_schema::flags f = 0);
+
+void
+Rotation_ (::std::ostream& os,
+           const ::Rotation& x, 
+           ::xml_schema::error_handler& eh,
+           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+           const ::std::string& e = "UTF-8",
+           ::xml_schema::flags f = 0);
+
+void
+Rotation_ (::std::ostream& os,
+           const ::Rotation& x, 
+           ::xercesc::DOMErrorHandler& eh,
+           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+           const ::std::string& e = "UTF-8",
+           ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+Rotation_ (::xercesc::XMLFormatTarget& ft,
+           const ::Rotation& x, 
+           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+           const ::std::string& e = "UTF-8",
+           ::xml_schema::flags f = 0);
+
+void
+Rotation_ (::xercesc::XMLFormatTarget& ft,
+           const ::Rotation& x, 
+           ::xml_schema::error_handler& eh,
+           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+           const ::std::string& e = "UTF-8",
+           ::xml_schema::flags f = 0);
+
+void
+Rotation_ (::xercesc::XMLFormatTarget& ft,
+           const ::Rotation& x, 
+           ::xercesc::DOMErrorHandler& eh,
+           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+           const ::std::string& e = "UTF-8",
+           ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+Rotation_ (::xercesc::DOMDocument& d,
+           const ::Rotation& x,
+           ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+Rotation_ (const ::Rotation& x, 
+           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+           ::xml_schema::flags f = 0);
+
 void
 operator<< (::xercesc::DOMElement&, const Vector&);
+
+// Serialize to std::ostream.
+//
+
+void
+Vector_ (::std::ostream& os,
+         const ::Vector& x, 
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Vector_ (::std::ostream& os,
+         const ::Vector& x, 
+         ::xml_schema::error_handler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Vector_ (::std::ostream& os,
+         const ::Vector& x, 
+         ::xercesc::DOMErrorHandler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+Vector_ (::xercesc::XMLFormatTarget& ft,
+         const ::Vector& x, 
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Vector_ (::xercesc::XMLFormatTarget& ft,
+         const ::Vector& x, 
+         ::xml_schema::error_handler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+void
+Vector_ (::xercesc::XMLFormatTarget& ft,
+         const ::Vector& x, 
+         ::xercesc::DOMErrorHandler& eh,
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         const ::std::string& e = "UTF-8",
+         ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+Vector_ (::xercesc::DOMDocument& d,
+         const ::Vector& x,
+         ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+Vector_ (const ::Vector& x, 
+         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+         ::xml_schema::flags f = 0);
 
 void
 operator<< (::xercesc::DOMElement&, const Quaternion&);
 
+// Serialize to std::ostream.
+//
+
+void
+Quaternion_ (::std::ostream& os,
+             const ::Quaternion& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+Quaternion_ (::std::ostream& os,
+             const ::Quaternion& x, 
+             ::xml_schema::error_handler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+Quaternion_ (::std::ostream& os,
+             const ::Quaternion& x, 
+             ::xercesc::DOMErrorHandler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+// Serialize to xercesc::XMLFormatTarget.
+//
+
+void
+Quaternion_ (::xercesc::XMLFormatTarget& ft,
+             const ::Quaternion& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+Quaternion_ (::xercesc::XMLFormatTarget& ft,
+             const ::Quaternion& x, 
+             ::xml_schema::error_handler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+void
+Quaternion_ (::xercesc::XMLFormatTarget& ft,
+             const ::Quaternion& x, 
+             ::xercesc::DOMErrorHandler& eh,
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             const ::std::string& e = "UTF-8",
+             ::xml_schema::flags f = 0);
+
+// Serialize to an existing xercesc::DOMDocument.
+//
+
+void
+Quaternion_ (::xercesc::DOMDocument& d,
+             const ::Quaternion& x,
+             ::xml_schema::flags f = 0);
+
+// Serialize to a new xercesc::DOMDocument.
+//
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+Quaternion_ (const ::Quaternion& x, 
+             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+             ::xml_schema::flags f = 0);
+
 void
 operator<< (::xercesc::DOMElement&, const Foo&);
+
+void
+operator<< (::xercesc::DOMElement&, const Param&);
+
+void
+operator<< (::xercesc::DOMAttr&, const Param&);
+
+void
+operator<< (::xml_schema::list_stream&,
+            const Param&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramBounce&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamBounce&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamBounce2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamBounce3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramCFM&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamCFM&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamCFM2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamCFM3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramFMax&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamFMax&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamFMax2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamFMax3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramFudgeFactor&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamFudgeFactor&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamFudgeFactor2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamFudgeFactor3&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamGroup&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramHiStop&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamHiStop&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamHiStop2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamHiStop3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramLoStop&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamLoStop&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamLoStop2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamLoStop3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramStopCFM&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamStopCFM&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamStopCFM2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamStopCFM3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramStopERP&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamStopERP&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamStopERP2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamStopERP3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramSuspensionCFM&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamSuspensionCFM&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamSuspensionCFM2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamSuspensionCFM3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramSuspensionERP&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamSuspensionERP&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamSuspensionERP2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamSuspensionERP3&);
+
+void
+operator<< (::xercesc::DOMElement&, const paramVel&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamVel&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamVel2&);
+
+void
+operator<< (::xercesc::DOMElement&, const ParamVel3&);
 
 #include <xsd/cxx/post.hxx>
 

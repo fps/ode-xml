@@ -1207,6 +1207,24 @@ Body2 (::std::auto_ptr< Body2_type > x)
   this->Body2_.set (x);
 }
 
+const Joint::Param_sequence& Joint::
+Param () const
+{
+  return this->Param_;
+}
+
+Joint::Param_sequence& Joint::
+Param ()
+{
+  return this->Param_;
+}
+
+void Joint::
+Param (const Param_sequence& s)
+{
+  this->Param_ = s;
+}
+
 
 // HingeJoint
 // 
@@ -1290,6 +1308,124 @@ Torque (const Torque_type& x)
 }
 
 void HingeJoint::
+Torque (const Torque_optional& x)
+{
+  this->Torque_ = x;
+}
+
+
+// HingeJoint2
+// 
+
+const HingeJoint2::Anchor_optional& HingeJoint2::
+Anchor () const
+{
+  return this->Anchor_;
+}
+
+HingeJoint2::Anchor_optional& HingeJoint2::
+Anchor ()
+{
+  return this->Anchor_;
+}
+
+void HingeJoint2::
+Anchor (const Anchor_type& x)
+{
+  this->Anchor_.set (x);
+}
+
+void HingeJoint2::
+Anchor (const Anchor_optional& x)
+{
+  this->Anchor_ = x;
+}
+
+void HingeJoint2::
+Anchor (::std::auto_ptr< Anchor_type > x)
+{
+  this->Anchor_.set (x);
+}
+
+const HingeJoint2::Axis1_optional& HingeJoint2::
+Axis1 () const
+{
+  return this->Axis1_;
+}
+
+HingeJoint2::Axis1_optional& HingeJoint2::
+Axis1 ()
+{
+  return this->Axis1_;
+}
+
+void HingeJoint2::
+Axis1 (const Axis1_type& x)
+{
+  this->Axis1_.set (x);
+}
+
+void HingeJoint2::
+Axis1 (const Axis1_optional& x)
+{
+  this->Axis1_ = x;
+}
+
+void HingeJoint2::
+Axis1 (::std::auto_ptr< Axis1_type > x)
+{
+  this->Axis1_.set (x);
+}
+
+const HingeJoint2::Axis2_optional& HingeJoint2::
+Axis2 () const
+{
+  return this->Axis2_;
+}
+
+HingeJoint2::Axis2_optional& HingeJoint2::
+Axis2 ()
+{
+  return this->Axis2_;
+}
+
+void HingeJoint2::
+Axis2 (const Axis2_type& x)
+{
+  this->Axis2_.set (x);
+}
+
+void HingeJoint2::
+Axis2 (const Axis2_optional& x)
+{
+  this->Axis2_ = x;
+}
+
+void HingeJoint2::
+Axis2 (::std::auto_ptr< Axis2_type > x)
+{
+  this->Axis2_.set (x);
+}
+
+const HingeJoint2::Torque_optional& HingeJoint2::
+Torque () const
+{
+  return this->Torque_;
+}
+
+HingeJoint2::Torque_optional& HingeJoint2::
+Torque ()
+{
+  return this->Torque_;
+}
+
+void HingeJoint2::
+Torque (const Torque_type& x)
+{
+  this->Torque_.set (x);
+}
+
+void HingeJoint2::
 Torque (const Torque_optional& x)
 {
   this->Torque_ = x;
@@ -1804,6 +1940,1270 @@ K (const K_optional& x)
 
 // Foo
 // 
+
+
+// Param
+// 
+
+
+// paramBounce
+// 
+
+const paramBounce::Value_type& paramBounce::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramBounce::Value_type& paramBounce::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramBounce::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramBounce::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamBounce
+// 
+
+const ParamBounce::Value_optional& ParamBounce::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamBounce::Value_optional& ParamBounce::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamBounce::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamBounce::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamBounce2
+// 
+
+const ParamBounce2::Value_optional& ParamBounce2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamBounce2::Value_optional& ParamBounce2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamBounce2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamBounce2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamBounce3
+// 
+
+const ParamBounce3::Value_optional& ParamBounce3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamBounce3::Value_optional& ParamBounce3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamBounce3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamBounce3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramCFM
+// 
+
+const paramCFM::Value_type& paramCFM::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramCFM::Value_type& paramCFM::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramCFM::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramCFM::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamCFM
+// 
+
+const ParamCFM::Value_optional& ParamCFM::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamCFM::Value_optional& ParamCFM::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamCFM::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamCFM::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamCFM2
+// 
+
+const ParamCFM2::Value_optional& ParamCFM2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamCFM2::Value_optional& ParamCFM2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamCFM2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamCFM2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamCFM3
+// 
+
+const ParamCFM3::Value_optional& ParamCFM3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamCFM3::Value_optional& ParamCFM3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamCFM3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamCFM3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramFMax
+// 
+
+const paramFMax::Value_type& paramFMax::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramFMax::Value_type& paramFMax::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramFMax::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramFMax::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamFMax
+// 
+
+const ParamFMax::Value_optional& ParamFMax::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamFMax::Value_optional& ParamFMax::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamFMax::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamFMax::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamFMax2
+// 
+
+const ParamFMax2::Value_optional& ParamFMax2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamFMax2::Value_optional& ParamFMax2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamFMax2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamFMax2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamFMax3
+// 
+
+const ParamFMax3::Value_optional& ParamFMax3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamFMax3::Value_optional& ParamFMax3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamFMax3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamFMax3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramFudgeFactor
+// 
+
+const paramFudgeFactor::Value_type& paramFudgeFactor::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramFudgeFactor::Value_type& paramFudgeFactor::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramFudgeFactor::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramFudgeFactor::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamFudgeFactor
+// 
+
+const ParamFudgeFactor::Value_optional& ParamFudgeFactor::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamFudgeFactor::Value_optional& ParamFudgeFactor::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamFudgeFactor::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamFudgeFactor::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamFudgeFactor2
+// 
+
+const ParamFudgeFactor2::Value_optional& ParamFudgeFactor2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamFudgeFactor2::Value_optional& ParamFudgeFactor2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamFudgeFactor2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamFudgeFactor2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamFudgeFactor3
+// 
+
+const ParamFudgeFactor3::Value_optional& ParamFudgeFactor3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamFudgeFactor3::Value_optional& ParamFudgeFactor3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamFudgeFactor3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamFudgeFactor3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamGroup
+// 
+
+const ParamGroup::Value_optional& ParamGroup::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamGroup::Value_optional& ParamGroup::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamGroup::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamGroup::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramHiStop
+// 
+
+const paramHiStop::Value_type& paramHiStop::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramHiStop::Value_type& paramHiStop::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramHiStop::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramHiStop::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamHiStop
+// 
+
+const ParamHiStop::Value_optional& ParamHiStop::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamHiStop::Value_optional& ParamHiStop::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamHiStop::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamHiStop::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamHiStop2
+// 
+
+const ParamHiStop2::Value_optional& ParamHiStop2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamHiStop2::Value_optional& ParamHiStop2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamHiStop2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamHiStop2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamHiStop3
+// 
+
+const ParamHiStop3::Value_optional& ParamHiStop3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamHiStop3::Value_optional& ParamHiStop3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamHiStop3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamHiStop3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramLoStop
+// 
+
+const paramLoStop::Value_type& paramLoStop::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramLoStop::Value_type& paramLoStop::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramLoStop::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramLoStop::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamLoStop
+// 
+
+const ParamLoStop::Value_optional& ParamLoStop::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamLoStop::Value_optional& ParamLoStop::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamLoStop::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamLoStop::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamLoStop2
+// 
+
+const ParamLoStop2::Value_optional& ParamLoStop2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamLoStop2::Value_optional& ParamLoStop2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamLoStop2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamLoStop2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamLoStop3
+// 
+
+const ParamLoStop3::Value_optional& ParamLoStop3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamLoStop3::Value_optional& ParamLoStop3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamLoStop3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamLoStop3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramStopCFM
+// 
+
+const paramStopCFM::Value_type& paramStopCFM::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramStopCFM::Value_type& paramStopCFM::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramStopCFM::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramStopCFM::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamStopCFM
+// 
+
+const ParamStopCFM::Value_optional& ParamStopCFM::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamStopCFM::Value_optional& ParamStopCFM::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamStopCFM::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamStopCFM::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamStopCFM2
+// 
+
+const ParamStopCFM2::Value_optional& ParamStopCFM2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamStopCFM2::Value_optional& ParamStopCFM2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamStopCFM2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamStopCFM2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamStopCFM3
+// 
+
+const ParamStopCFM3::Value_optional& ParamStopCFM3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamStopCFM3::Value_optional& ParamStopCFM3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamStopCFM3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamStopCFM3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramStopERP
+// 
+
+const paramStopERP::Value_type& paramStopERP::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramStopERP::Value_type& paramStopERP::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramStopERP::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramStopERP::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamStopERP
+// 
+
+const ParamStopERP::Value_optional& ParamStopERP::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamStopERP::Value_optional& ParamStopERP::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamStopERP::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamStopERP::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamStopERP2
+// 
+
+const ParamStopERP2::Value_optional& ParamStopERP2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamStopERP2::Value_optional& ParamStopERP2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamStopERP2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamStopERP2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamStopERP3
+// 
+
+const ParamStopERP3::Value_optional& ParamStopERP3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamStopERP3::Value_optional& ParamStopERP3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamStopERP3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamStopERP3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramSuspensionCFM
+// 
+
+const paramSuspensionCFM::Value_type& paramSuspensionCFM::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramSuspensionCFM::Value_type& paramSuspensionCFM::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramSuspensionCFM::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramSuspensionCFM::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamSuspensionCFM
+// 
+
+const ParamSuspensionCFM::Value_optional& ParamSuspensionCFM::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamSuspensionCFM::Value_optional& ParamSuspensionCFM::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamSuspensionCFM::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamSuspensionCFM::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamSuspensionCFM2
+// 
+
+const ParamSuspensionCFM2::Value_optional& ParamSuspensionCFM2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamSuspensionCFM2::Value_optional& ParamSuspensionCFM2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamSuspensionCFM2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamSuspensionCFM2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamSuspensionCFM3
+// 
+
+const ParamSuspensionCFM3::Value_optional& ParamSuspensionCFM3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamSuspensionCFM3::Value_optional& ParamSuspensionCFM3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamSuspensionCFM3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamSuspensionCFM3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramSuspensionERP
+// 
+
+const paramSuspensionERP::Value_type& paramSuspensionERP::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramSuspensionERP::Value_type& paramSuspensionERP::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramSuspensionERP::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramSuspensionERP::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamSuspensionERP
+// 
+
+const ParamSuspensionERP::Value_optional& ParamSuspensionERP::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamSuspensionERP::Value_optional& ParamSuspensionERP::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamSuspensionERP::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamSuspensionERP::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamSuspensionERP2
+// 
+
+const ParamSuspensionERP2::Value_optional& ParamSuspensionERP2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamSuspensionERP2::Value_optional& ParamSuspensionERP2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamSuspensionERP2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamSuspensionERP2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamSuspensionERP3
+// 
+
+const ParamSuspensionERP3::Value_optional& ParamSuspensionERP3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamSuspensionERP3::Value_optional& ParamSuspensionERP3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamSuspensionERP3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamSuspensionERP3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// paramVel
+// 
+
+const paramVel::Value_type& paramVel::
+Value () const
+{
+  return this->Value_.get ();
+}
+
+paramVel::Value_type& paramVel::
+Value ()
+{
+  return this->Value_.get ();
+}
+
+void paramVel::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void paramVel::
+Value (::std::auto_ptr< Value_type > x)
+{
+  this->Value_.set (x);
+}
+
+
+// ParamVel
+// 
+
+const ParamVel::Value_optional& ParamVel::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamVel::Value_optional& ParamVel::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamVel::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamVel::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamVel2
+// 
+
+const ParamVel2::Value_optional& ParamVel2::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamVel2::Value_optional& ParamVel2::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamVel2::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamVel2::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
+
+
+// ParamVel3
+// 
+
+const ParamVel3::Value_optional& ParamVel3::
+Value () const
+{
+  return this->Value_;
+}
+
+ParamVel3::Value_optional& ParamVel3::
+Value ()
+{
+  return this->Value_;
+}
+
+void ParamVel3::
+Value (const Value_type& x)
+{
+  this->Value_.set (x);
+}
+
+void ParamVel3::
+Value (const Value_optional& x)
+{
+  this->Value_ = x;
+}
 
 
 #include <xsd/cxx/xml/dom/parsing-source.hxx>
@@ -3331,7 +4731,8 @@ Joint ()
 : ::RSObject (),
   Feedback_ (::xml_schema::flags (), this),
   Body1_ (::xml_schema::flags (), this),
-  Body2_ (::xml_schema::flags (), this)
+  Body2_ (::xml_schema::flags (), this),
+  Param_ (::xml_schema::flags (), this)
 {
 }
 
@@ -3342,7 +4743,8 @@ Joint (const Joint& x,
 : ::RSObject (x, f, c),
   Feedback_ (x.Feedback_, f, this),
   Body1_ (x.Body1_, f, this),
-  Body2_ (x.Body2_, f, this)
+  Body2_ (x.Body2_, f, this),
+  Param_ (x.Param_, f, this)
 {
 }
 
@@ -3353,7 +4755,8 @@ Joint (const ::xercesc::DOMElement& e,
 : ::RSObject (e, f | ::xml_schema::flags::base, c),
   Feedback_ (f, this),
   Body1_ (f, this),
-  Body2_ (f, this)
+  Body2_ (f, this),
+  Param_ (f, this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
   {
@@ -3444,6 +4847,34 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
           this->Body2_.set (r);
           continue;
         }
+      }
+    }
+
+    // Param
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Param",
+          "",
+          &::xsd::cxx::tree::factory_impl< Param_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        ::std::auto_ptr< Param_type > r (
+          dynamic_cast< Param_type* > (tmp.get ()));
+
+        if (r.get ())
+          tmp.release ();
+        else
+          throw ::xsd::cxx::tree::not_derived< char > ();
+
+        this->Param_.push_back (r);
+        continue;
       }
     }
 
@@ -3613,6 +5044,186 @@ static
 const ::xsd::cxx::tree::type_factory_initializer< 0, char, HingeJoint >
 _xsd_HingeJoint_type_factory_init (
   "HingeJoint",
+  "");
+
+// HingeJoint2
+//
+
+HingeJoint2::
+HingeJoint2 ()
+: ::Joint (),
+  Anchor_ (::xml_schema::flags (), this),
+  Axis1_ (::xml_schema::flags (), this),
+  Axis2_ (::xml_schema::flags (), this),
+  Torque_ (::xml_schema::flags (), this)
+{
+}
+
+HingeJoint2::
+HingeJoint2 (const HingeJoint2& x,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Joint (x, f, c),
+  Anchor_ (x.Anchor_, f, this),
+  Axis1_ (x.Axis1_, f, this),
+  Axis2_ (x.Axis2_, f, this),
+  Torque_ (x.Torque_, f, this)
+{
+}
+
+HingeJoint2::
+HingeJoint2 (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Joint (e, f | ::xml_schema::flags::base, c),
+  Anchor_ (f, this),
+  Axis1_ (f, this),
+  Axis2_ (f, this),
+  Torque_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void HingeJoint2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  this->::Joint::parse (p, f);
+
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Anchor
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Anchor",
+          "",
+          &::xsd::cxx::tree::factory_impl< Anchor_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!this->Anchor_)
+        {
+          ::std::auto_ptr< Anchor_type > r (
+            dynamic_cast< Anchor_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Anchor_.set (r);
+          continue;
+        }
+      }
+    }
+
+    // Axis1
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Axis1",
+          "",
+          &::xsd::cxx::tree::factory_impl< Axis1_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!this->Axis1_)
+        {
+          ::std::auto_ptr< Axis1_type > r (
+            dynamic_cast< Axis1_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Axis1_.set (r);
+          continue;
+        }
+      }
+    }
+
+    // Axis2
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Axis2",
+          "",
+          &::xsd::cxx::tree::factory_impl< Axis2_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!this->Axis2_)
+        {
+          ::std::auto_ptr< Axis2_type > r (
+            dynamic_cast< Axis2_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Axis2_.set (r);
+          continue;
+        }
+      }
+    }
+
+    // Torque
+    //
+    if (n.name () == "Torque" && n.namespace_ ().empty ())
+    {
+      if (!this->Torque_)
+      {
+        this->Torque_.set (Torque_traits::create (i, f, this));
+        continue;
+      }
+    }
+
+    break;
+  }
+}
+
+HingeJoint2* HingeJoint2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class HingeJoint2 (*this, f, c);
+}
+
+HingeJoint2::
+~HingeJoint2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, HingeJoint2 >
+_xsd_HingeJoint2_type_factory_init (
+  "HingeJoint2",
   "");
 
 // GeomBox
@@ -4547,6 +6158,3622 @@ _xsd_Foo_type_factory_init (
   "Foo",
   "");
 
+// Param
+//
+
+Param::
+Param ()
+: ::xml_schema::type ()
+{
+}
+
+Param::
+Param (const Param& x,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
+: ::xml_schema::type (x, f, c)
+{
+}
+
+Param::
+Param (const ::xercesc::DOMElement& e,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
+: ::xml_schema::type (e, f, c)
+{
+}
+
+Param::
+Param (const ::xercesc::DOMAttr& a,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
+: ::xml_schema::type (a, f, c)
+{
+}
+
+Param::
+Param (const ::std::string& s,
+       const ::xercesc::DOMElement* e,
+       ::xml_schema::flags f,
+       ::xml_schema::container* c)
+: ::xml_schema::type (s, e, f, c)
+{
+}
+
+Param* Param::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class Param (*this, f, c);
+}
+
+Param::
+~Param ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, Param >
+_xsd_Param_type_factory_init (
+  "Param",
+  "");
+
+// paramBounce
+//
+
+paramBounce::
+paramBounce (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramBounce::
+paramBounce (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramBounce::
+paramBounce (const paramBounce& x,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramBounce::
+paramBounce (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramBounce::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramBounce* paramBounce::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramBounce (*this, f, c);
+}
+
+paramBounce::
+~paramBounce ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramBounce >
+_xsd_paramBounce_type_factory_init (
+  "paramBounce",
+  "");
+
+// ParamBounce
+//
+
+ParamBounce::
+ParamBounce ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamBounce::
+ParamBounce (const ParamBounce& x,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamBounce::
+ParamBounce (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamBounce::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamBounce* ParamBounce::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamBounce (*this, f, c);
+}
+
+ParamBounce::
+~ParamBounce ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamBounce >
+_xsd_ParamBounce_type_factory_init (
+  "ParamBounce",
+  "");
+
+// ParamBounce2
+//
+
+ParamBounce2::
+ParamBounce2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamBounce2::
+ParamBounce2 (const ParamBounce2& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamBounce2::
+ParamBounce2 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamBounce2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamBounce2* ParamBounce2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamBounce2 (*this, f, c);
+}
+
+ParamBounce2::
+~ParamBounce2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamBounce2 >
+_xsd_ParamBounce2_type_factory_init (
+  "ParamBounce2",
+  "");
+
+// ParamBounce3
+//
+
+ParamBounce3::
+ParamBounce3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamBounce3::
+ParamBounce3 (const ParamBounce3& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamBounce3::
+ParamBounce3 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamBounce3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamBounce3* ParamBounce3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamBounce3 (*this, f, c);
+}
+
+ParamBounce3::
+~ParamBounce3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamBounce3 >
+_xsd_ParamBounce3_type_factory_init (
+  "ParamBounce3",
+  "");
+
+// paramCFM
+//
+
+paramCFM::
+paramCFM (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramCFM::
+paramCFM (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramCFM::
+paramCFM (const paramCFM& x,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramCFM::
+paramCFM (const ::xercesc::DOMElement& e,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramCFM::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramCFM* paramCFM::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramCFM (*this, f, c);
+}
+
+paramCFM::
+~paramCFM ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramCFM >
+_xsd_paramCFM_type_factory_init (
+  "paramCFM",
+  "");
+
+// ParamCFM
+//
+
+ParamCFM::
+ParamCFM ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamCFM::
+ParamCFM (const ParamCFM& x,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamCFM::
+ParamCFM (const ::xercesc::DOMElement& e,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamCFM::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamCFM* ParamCFM::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamCFM (*this, f, c);
+}
+
+ParamCFM::
+~ParamCFM ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamCFM >
+_xsd_ParamCFM_type_factory_init (
+  "ParamCFM",
+  "");
+
+// ParamCFM2
+//
+
+ParamCFM2::
+ParamCFM2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamCFM2::
+ParamCFM2 (const ParamCFM2& x,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamCFM2::
+ParamCFM2 (const ::xercesc::DOMElement& e,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamCFM2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamCFM2* ParamCFM2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamCFM2 (*this, f, c);
+}
+
+ParamCFM2::
+~ParamCFM2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamCFM2 >
+_xsd_ParamCFM2_type_factory_init (
+  "ParamCFM2",
+  "");
+
+// ParamCFM3
+//
+
+ParamCFM3::
+ParamCFM3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamCFM3::
+ParamCFM3 (const ParamCFM3& x,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamCFM3::
+ParamCFM3 (const ::xercesc::DOMElement& e,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamCFM3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamCFM3* ParamCFM3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamCFM3 (*this, f, c);
+}
+
+ParamCFM3::
+~ParamCFM3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamCFM3 >
+_xsd_ParamCFM3_type_factory_init (
+  "ParamCFM3",
+  "");
+
+// paramFMax
+//
+
+paramFMax::
+paramFMax (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramFMax::
+paramFMax (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramFMax::
+paramFMax (const paramFMax& x,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramFMax::
+paramFMax (const ::xercesc::DOMElement& e,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramFMax::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramFMax* paramFMax::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramFMax (*this, f, c);
+}
+
+paramFMax::
+~paramFMax ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramFMax >
+_xsd_paramFMax_type_factory_init (
+  "paramFMax",
+  "");
+
+// ParamFMax
+//
+
+ParamFMax::
+ParamFMax ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamFMax::
+ParamFMax (const ParamFMax& x,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamFMax::
+ParamFMax (const ::xercesc::DOMElement& e,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamFMax::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamFMax* ParamFMax::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamFMax (*this, f, c);
+}
+
+ParamFMax::
+~ParamFMax ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamFMax >
+_xsd_ParamFMax_type_factory_init (
+  "ParamFMax",
+  "");
+
+// ParamFMax2
+//
+
+ParamFMax2::
+ParamFMax2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamFMax2::
+ParamFMax2 (const ParamFMax2& x,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamFMax2::
+ParamFMax2 (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamFMax2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamFMax2* ParamFMax2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamFMax2 (*this, f, c);
+}
+
+ParamFMax2::
+~ParamFMax2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamFMax2 >
+_xsd_ParamFMax2_type_factory_init (
+  "ParamFMax2",
+  "");
+
+// ParamFMax3
+//
+
+ParamFMax3::
+ParamFMax3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamFMax3::
+ParamFMax3 (const ParamFMax3& x,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamFMax3::
+ParamFMax3 (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamFMax3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamFMax3* ParamFMax3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamFMax3 (*this, f, c);
+}
+
+ParamFMax3::
+~ParamFMax3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamFMax3 >
+_xsd_ParamFMax3_type_factory_init (
+  "ParamFMax3",
+  "");
+
+// paramFudgeFactor
+//
+
+paramFudgeFactor::
+paramFudgeFactor (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramFudgeFactor::
+paramFudgeFactor (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramFudgeFactor::
+paramFudgeFactor (const paramFudgeFactor& x,
+                  ::xml_schema::flags f,
+                  ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramFudgeFactor::
+paramFudgeFactor (const ::xercesc::DOMElement& e,
+                  ::xml_schema::flags f,
+                  ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramFudgeFactor::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramFudgeFactor* paramFudgeFactor::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramFudgeFactor (*this, f, c);
+}
+
+paramFudgeFactor::
+~paramFudgeFactor ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramFudgeFactor >
+_xsd_paramFudgeFactor_type_factory_init (
+  "paramFudgeFactor",
+  "");
+
+// ParamFudgeFactor
+//
+
+ParamFudgeFactor::
+ParamFudgeFactor ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamFudgeFactor::
+ParamFudgeFactor (const ParamFudgeFactor& x,
+                  ::xml_schema::flags f,
+                  ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamFudgeFactor::
+ParamFudgeFactor (const ::xercesc::DOMElement& e,
+                  ::xml_schema::flags f,
+                  ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamFudgeFactor::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamFudgeFactor* ParamFudgeFactor::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamFudgeFactor (*this, f, c);
+}
+
+ParamFudgeFactor::
+~ParamFudgeFactor ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamFudgeFactor >
+_xsd_ParamFudgeFactor_type_factory_init (
+  "ParamFudgeFactor",
+  "");
+
+// ParamFudgeFactor2
+//
+
+ParamFudgeFactor2::
+ParamFudgeFactor2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamFudgeFactor2::
+ParamFudgeFactor2 (const ParamFudgeFactor2& x,
+                   ::xml_schema::flags f,
+                   ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamFudgeFactor2::
+ParamFudgeFactor2 (const ::xercesc::DOMElement& e,
+                   ::xml_schema::flags f,
+                   ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamFudgeFactor2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamFudgeFactor2* ParamFudgeFactor2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamFudgeFactor2 (*this, f, c);
+}
+
+ParamFudgeFactor2::
+~ParamFudgeFactor2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamFudgeFactor2 >
+_xsd_ParamFudgeFactor2_type_factory_init (
+  "ParamFudgeFactor2",
+  "");
+
+// ParamFudgeFactor3
+//
+
+ParamFudgeFactor3::
+ParamFudgeFactor3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamFudgeFactor3::
+ParamFudgeFactor3 (const ParamFudgeFactor3& x,
+                   ::xml_schema::flags f,
+                   ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamFudgeFactor3::
+ParamFudgeFactor3 (const ::xercesc::DOMElement& e,
+                   ::xml_schema::flags f,
+                   ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamFudgeFactor3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamFudgeFactor3* ParamFudgeFactor3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamFudgeFactor3 (*this, f, c);
+}
+
+ParamFudgeFactor3::
+~ParamFudgeFactor3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamFudgeFactor3 >
+_xsd_ParamFudgeFactor3_type_factory_init (
+  "ParamFudgeFactor3",
+  "");
+
+// ParamGroup
+//
+
+ParamGroup::
+ParamGroup ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamGroup::
+ParamGroup (const ParamGroup& x,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamGroup::
+ParamGroup (const ::xercesc::DOMElement& e,
+            ::xml_schema::flags f,
+            ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamGroup::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamGroup* ParamGroup::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamGroup (*this, f, c);
+}
+
+ParamGroup::
+~ParamGroup ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamGroup >
+_xsd_ParamGroup_type_factory_init (
+  "ParamGroup",
+  "");
+
+// paramHiStop
+//
+
+paramHiStop::
+paramHiStop (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramHiStop::
+paramHiStop (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramHiStop::
+paramHiStop (const paramHiStop& x,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramHiStop::
+paramHiStop (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramHiStop::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramHiStop* paramHiStop::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramHiStop (*this, f, c);
+}
+
+paramHiStop::
+~paramHiStop ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramHiStop >
+_xsd_paramHiStop_type_factory_init (
+  "paramHiStop",
+  "");
+
+// ParamHiStop
+//
+
+ParamHiStop::
+ParamHiStop ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamHiStop::
+ParamHiStop (const ParamHiStop& x,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamHiStop::
+ParamHiStop (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamHiStop::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamHiStop* ParamHiStop::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamHiStop (*this, f, c);
+}
+
+ParamHiStop::
+~ParamHiStop ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamHiStop >
+_xsd_ParamHiStop_type_factory_init (
+  "ParamHiStop",
+  "");
+
+// ParamHiStop2
+//
+
+ParamHiStop2::
+ParamHiStop2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamHiStop2::
+ParamHiStop2 (const ParamHiStop2& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamHiStop2::
+ParamHiStop2 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamHiStop2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamHiStop2* ParamHiStop2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamHiStop2 (*this, f, c);
+}
+
+ParamHiStop2::
+~ParamHiStop2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamHiStop2 >
+_xsd_ParamHiStop2_type_factory_init (
+  "ParamHiStop2",
+  "");
+
+// ParamHiStop3
+//
+
+ParamHiStop3::
+ParamHiStop3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamHiStop3::
+ParamHiStop3 (const ParamHiStop3& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamHiStop3::
+ParamHiStop3 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamHiStop3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamHiStop3* ParamHiStop3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamHiStop3 (*this, f, c);
+}
+
+ParamHiStop3::
+~ParamHiStop3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamHiStop3 >
+_xsd_ParamHiStop3_type_factory_init (
+  "ParamHiStop3",
+  "");
+
+// paramLoStop
+//
+
+paramLoStop::
+paramLoStop (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramLoStop::
+paramLoStop (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramLoStop::
+paramLoStop (const paramLoStop& x,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramLoStop::
+paramLoStop (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramLoStop::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramLoStop* paramLoStop::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramLoStop (*this, f, c);
+}
+
+paramLoStop::
+~paramLoStop ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramLoStop >
+_xsd_paramLoStop_type_factory_init (
+  "paramLoStop",
+  "");
+
+// ParamLoStop
+//
+
+ParamLoStop::
+ParamLoStop ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamLoStop::
+ParamLoStop (const ParamLoStop& x,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamLoStop::
+ParamLoStop (const ::xercesc::DOMElement& e,
+             ::xml_schema::flags f,
+             ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamLoStop::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamLoStop* ParamLoStop::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamLoStop (*this, f, c);
+}
+
+ParamLoStop::
+~ParamLoStop ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamLoStop >
+_xsd_ParamLoStop_type_factory_init (
+  "ParamLoStop",
+  "");
+
+// ParamLoStop2
+//
+
+ParamLoStop2::
+ParamLoStop2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamLoStop2::
+ParamLoStop2 (const ParamLoStop2& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamLoStop2::
+ParamLoStop2 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamLoStop2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamLoStop2* ParamLoStop2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamLoStop2 (*this, f, c);
+}
+
+ParamLoStop2::
+~ParamLoStop2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamLoStop2 >
+_xsd_ParamLoStop2_type_factory_init (
+  "ParamLoStop2",
+  "");
+
+// ParamLoStop3
+//
+
+ParamLoStop3::
+ParamLoStop3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamLoStop3::
+ParamLoStop3 (const ParamLoStop3& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamLoStop3::
+ParamLoStop3 (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamLoStop3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamLoStop3* ParamLoStop3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamLoStop3 (*this, f, c);
+}
+
+ParamLoStop3::
+~ParamLoStop3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamLoStop3 >
+_xsd_ParamLoStop3_type_factory_init (
+  "ParamLoStop3",
+  "");
+
+// paramStopCFM
+//
+
+paramStopCFM::
+paramStopCFM (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramStopCFM::
+paramStopCFM (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramStopCFM::
+paramStopCFM (const paramStopCFM& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramStopCFM::
+paramStopCFM (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramStopCFM::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramStopCFM* paramStopCFM::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramStopCFM (*this, f, c);
+}
+
+paramStopCFM::
+~paramStopCFM ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramStopCFM >
+_xsd_paramStopCFM_type_factory_init (
+  "paramStopCFM",
+  "");
+
+// ParamStopCFM
+//
+
+ParamStopCFM::
+ParamStopCFM ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamStopCFM::
+ParamStopCFM (const ParamStopCFM& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamStopCFM::
+ParamStopCFM (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamStopCFM::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamStopCFM* ParamStopCFM::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamStopCFM (*this, f, c);
+}
+
+ParamStopCFM::
+~ParamStopCFM ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamStopCFM >
+_xsd_ParamStopCFM_type_factory_init (
+  "ParamStopCFM",
+  "");
+
+// ParamStopCFM2
+//
+
+ParamStopCFM2::
+ParamStopCFM2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamStopCFM2::
+ParamStopCFM2 (const ParamStopCFM2& x,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamStopCFM2::
+ParamStopCFM2 (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamStopCFM2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamStopCFM2* ParamStopCFM2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamStopCFM2 (*this, f, c);
+}
+
+ParamStopCFM2::
+~ParamStopCFM2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamStopCFM2 >
+_xsd_ParamStopCFM2_type_factory_init (
+  "ParamStopCFM2",
+  "");
+
+// ParamStopCFM3
+//
+
+ParamStopCFM3::
+ParamStopCFM3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamStopCFM3::
+ParamStopCFM3 (const ParamStopCFM3& x,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamStopCFM3::
+ParamStopCFM3 (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamStopCFM3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamStopCFM3* ParamStopCFM3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamStopCFM3 (*this, f, c);
+}
+
+ParamStopCFM3::
+~ParamStopCFM3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamStopCFM3 >
+_xsd_ParamStopCFM3_type_factory_init (
+  "ParamStopCFM3",
+  "");
+
+// paramStopERP
+//
+
+paramStopERP::
+paramStopERP (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramStopERP::
+paramStopERP (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramStopERP::
+paramStopERP (const paramStopERP& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramStopERP::
+paramStopERP (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramStopERP::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramStopERP* paramStopERP::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramStopERP (*this, f, c);
+}
+
+paramStopERP::
+~paramStopERP ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramStopERP >
+_xsd_paramStopERP_type_factory_init (
+  "paramStopERP",
+  "");
+
+// ParamStopERP
+//
+
+ParamStopERP::
+ParamStopERP ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamStopERP::
+ParamStopERP (const ParamStopERP& x,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamStopERP::
+ParamStopERP (const ::xercesc::DOMElement& e,
+              ::xml_schema::flags f,
+              ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamStopERP::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamStopERP* ParamStopERP::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamStopERP (*this, f, c);
+}
+
+ParamStopERP::
+~ParamStopERP ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamStopERP >
+_xsd_ParamStopERP_type_factory_init (
+  "ParamStopERP",
+  "");
+
+// ParamStopERP2
+//
+
+ParamStopERP2::
+ParamStopERP2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamStopERP2::
+ParamStopERP2 (const ParamStopERP2& x,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamStopERP2::
+ParamStopERP2 (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamStopERP2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamStopERP2* ParamStopERP2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamStopERP2 (*this, f, c);
+}
+
+ParamStopERP2::
+~ParamStopERP2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamStopERP2 >
+_xsd_ParamStopERP2_type_factory_init (
+  "ParamStopERP2",
+  "");
+
+// ParamStopERP3
+//
+
+ParamStopERP3::
+ParamStopERP3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamStopERP3::
+ParamStopERP3 (const ParamStopERP3& x,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamStopERP3::
+ParamStopERP3 (const ::xercesc::DOMElement& e,
+               ::xml_schema::flags f,
+               ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamStopERP3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamStopERP3* ParamStopERP3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamStopERP3 (*this, f, c);
+}
+
+ParamStopERP3::
+~ParamStopERP3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamStopERP3 >
+_xsd_ParamStopERP3_type_factory_init (
+  "ParamStopERP3",
+  "");
+
+// paramSuspensionCFM
+//
+
+paramSuspensionCFM::
+paramSuspensionCFM (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramSuspensionCFM::
+paramSuspensionCFM (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramSuspensionCFM::
+paramSuspensionCFM (const paramSuspensionCFM& x,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramSuspensionCFM::
+paramSuspensionCFM (const ::xercesc::DOMElement& e,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramSuspensionCFM::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramSuspensionCFM* paramSuspensionCFM::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramSuspensionCFM (*this, f, c);
+}
+
+paramSuspensionCFM::
+~paramSuspensionCFM ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramSuspensionCFM >
+_xsd_paramSuspensionCFM_type_factory_init (
+  "paramSuspensionCFM",
+  "");
+
+// ParamSuspensionCFM
+//
+
+ParamSuspensionCFM::
+ParamSuspensionCFM ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamSuspensionCFM::
+ParamSuspensionCFM (const ParamSuspensionCFM& x,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamSuspensionCFM::
+ParamSuspensionCFM (const ::xercesc::DOMElement& e,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamSuspensionCFM::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamSuspensionCFM* ParamSuspensionCFM::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamSuspensionCFM (*this, f, c);
+}
+
+ParamSuspensionCFM::
+~ParamSuspensionCFM ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamSuspensionCFM >
+_xsd_ParamSuspensionCFM_type_factory_init (
+  "ParamSuspensionCFM",
+  "");
+
+// ParamSuspensionCFM2
+//
+
+ParamSuspensionCFM2::
+ParamSuspensionCFM2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamSuspensionCFM2::
+ParamSuspensionCFM2 (const ParamSuspensionCFM2& x,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamSuspensionCFM2::
+ParamSuspensionCFM2 (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamSuspensionCFM2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamSuspensionCFM2* ParamSuspensionCFM2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamSuspensionCFM2 (*this, f, c);
+}
+
+ParamSuspensionCFM2::
+~ParamSuspensionCFM2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamSuspensionCFM2 >
+_xsd_ParamSuspensionCFM2_type_factory_init (
+  "ParamSuspensionCFM2",
+  "");
+
+// ParamSuspensionCFM3
+//
+
+ParamSuspensionCFM3::
+ParamSuspensionCFM3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamSuspensionCFM3::
+ParamSuspensionCFM3 (const ParamSuspensionCFM3& x,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamSuspensionCFM3::
+ParamSuspensionCFM3 (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamSuspensionCFM3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamSuspensionCFM3* ParamSuspensionCFM3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamSuspensionCFM3 (*this, f, c);
+}
+
+ParamSuspensionCFM3::
+~ParamSuspensionCFM3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamSuspensionCFM3 >
+_xsd_ParamSuspensionCFM3_type_factory_init (
+  "ParamSuspensionCFM3",
+  "");
+
+// paramSuspensionERP
+//
+
+paramSuspensionERP::
+paramSuspensionERP (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramSuspensionERP::
+paramSuspensionERP (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramSuspensionERP::
+paramSuspensionERP (const paramSuspensionERP& x,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramSuspensionERP::
+paramSuspensionERP (const ::xercesc::DOMElement& e,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramSuspensionERP::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramSuspensionERP* paramSuspensionERP::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramSuspensionERP (*this, f, c);
+}
+
+paramSuspensionERP::
+~paramSuspensionERP ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramSuspensionERP >
+_xsd_paramSuspensionERP_type_factory_init (
+  "paramSuspensionERP",
+  "");
+
+// ParamSuspensionERP
+//
+
+ParamSuspensionERP::
+ParamSuspensionERP ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamSuspensionERP::
+ParamSuspensionERP (const ParamSuspensionERP& x,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamSuspensionERP::
+ParamSuspensionERP (const ::xercesc::DOMElement& e,
+                    ::xml_schema::flags f,
+                    ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamSuspensionERP::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamSuspensionERP* ParamSuspensionERP::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamSuspensionERP (*this, f, c);
+}
+
+ParamSuspensionERP::
+~ParamSuspensionERP ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamSuspensionERP >
+_xsd_ParamSuspensionERP_type_factory_init (
+  "ParamSuspensionERP",
+  "");
+
+// ParamSuspensionERP2
+//
+
+ParamSuspensionERP2::
+ParamSuspensionERP2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamSuspensionERP2::
+ParamSuspensionERP2 (const ParamSuspensionERP2& x,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamSuspensionERP2::
+ParamSuspensionERP2 (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamSuspensionERP2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamSuspensionERP2* ParamSuspensionERP2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamSuspensionERP2 (*this, f, c);
+}
+
+ParamSuspensionERP2::
+~ParamSuspensionERP2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamSuspensionERP2 >
+_xsd_ParamSuspensionERP2_type_factory_init (
+  "ParamSuspensionERP2",
+  "");
+
+// ParamSuspensionERP3
+//
+
+ParamSuspensionERP3::
+ParamSuspensionERP3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamSuspensionERP3::
+ParamSuspensionERP3 (const ParamSuspensionERP3& x,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamSuspensionERP3::
+ParamSuspensionERP3 (const ::xercesc::DOMElement& e,
+                     ::xml_schema::flags f,
+                     ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamSuspensionERP3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamSuspensionERP3* ParamSuspensionERP3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamSuspensionERP3 (*this, f, c);
+}
+
+ParamSuspensionERP3::
+~ParamSuspensionERP3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamSuspensionERP3 >
+_xsd_ParamSuspensionERP3_type_factory_init (
+  "ParamSuspensionERP3",
+  "");
+
+// paramVel
+//
+
+paramVel::
+paramVel (const Value_type& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramVel::
+paramVel (::std::auto_ptr< Value_type >& Value)
+: ::Param (),
+  Value_ (Value, ::xml_schema::flags (), this)
+{
+}
+
+paramVel::
+paramVel (const paramVel& x,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+paramVel::
+paramVel (const ::xercesc::DOMElement& e,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, true, false);
+    this->parse (p, f);
+  }
+}
+
+void paramVel::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  for (; p.more_elements (); p.next_element ())
+  {
+    const ::xercesc::DOMElement& i (p.cur_element ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    // Value
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Value",
+          "",
+          &::xsd::cxx::tree::factory_impl< Value_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!Value_.present ())
+        {
+          ::std::auto_ptr< Value_type > r (
+            dynamic_cast< Value_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->Value_.set (r);
+          continue;
+        }
+      }
+    }
+
+    break;
+  }
+
+  if (!Value_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "Value",
+      "");
+  }
+}
+
+paramVel* paramVel::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class paramVel (*this, f, c);
+}
+
+paramVel::
+~paramVel ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, paramVel >
+_xsd_paramVel_type_factory_init (
+  "paramVel",
+  "");
+
+// ParamVel
+//
+
+ParamVel::
+ParamVel ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamVel::
+ParamVel (const ParamVel& x,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamVel::
+ParamVel (const ::xercesc::DOMElement& e,
+          ::xml_schema::flags f,
+          ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamVel::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamVel* ParamVel::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamVel (*this, f, c);
+}
+
+ParamVel::
+~ParamVel ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamVel >
+_xsd_ParamVel_type_factory_init (
+  "ParamVel",
+  "");
+
+// ParamVel2
+//
+
+ParamVel2::
+ParamVel2 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamVel2::
+ParamVel2 (const ParamVel2& x,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamVel2::
+ParamVel2 (const ::xercesc::DOMElement& e,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamVel2::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamVel2* ParamVel2::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamVel2 (*this, f, c);
+}
+
+ParamVel2::
+~ParamVel2 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamVel2 >
+_xsd_ParamVel2_type_factory_init (
+  "ParamVel2",
+  "");
+
+// ParamVel3
+//
+
+ParamVel3::
+ParamVel3 ()
+: ::Param (),
+  Value_ (::xml_schema::flags (), this)
+{
+}
+
+ParamVel3::
+ParamVel3 (const ParamVel3& x,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (x, f, c),
+  Value_ (x.Value_, f, this)
+{
+}
+
+ParamVel3::
+ParamVel3 (const ::xercesc::DOMElement& e,
+           ::xml_schema::flags f,
+           ::xml_schema::container* c)
+: ::Param (e, f | ::xml_schema::flags::base, c),
+  Value_ (f, this)
+{
+  if ((f & ::xml_schema::flags::base) == 0)
+  {
+    ::xsd::cxx::xml::dom::parser< char > p (e, false, true);
+    this->parse (p, f);
+  }
+}
+
+void ParamVel3::
+parse (::xsd::cxx::xml::dom::parser< char >& p,
+       ::xml_schema::flags f)
+{
+  while (p.more_attributes ())
+  {
+    const ::xercesc::DOMAttr& i (p.next_attribute ());
+    const ::xsd::cxx::xml::qualified_name< char > n (
+      ::xsd::cxx::xml::dom::name< char > (i));
+
+    if (n.name () == "Value" && n.namespace_ ().empty ())
+    {
+      this->Value_.set (Value_traits::create (i, f, this));
+      continue;
+    }
+  }
+}
+
+ParamVel3* ParamVel3::
+_clone (::xml_schema::flags f,
+        ::xml_schema::container* c) const
+{
+  return new class ParamVel3 (*this, f, c);
+}
+
+ParamVel3::
+~ParamVel3 ()
+{
+}
+
+static
+const ::xsd::cxx::tree::type_factory_initializer< 0, char, ParamVel3 >
+_xsd_ParamVel3_type_factory_init (
+  "ParamVel3",
+  "");
+
 #include <istream>
 #include <xsd/cxx/xml/sax/std-input-source.hxx>
 #include <xsd/cxx/tree/error-handler.hxx>
@@ -5157,6 +10384,309 @@ World_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
     "");
 }
 
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::std::string& u,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::SimpleSpace > r (
+    ::SimpleSpace_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::std::string& u,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::SimpleSpace > r (
+    ::SimpleSpace_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::std::string& u,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::SimpleSpace > r (
+    ::SimpleSpace_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::SimpleSpace_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::SimpleSpace_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::SimpleSpace_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::SimpleSpace_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::SimpleSpace_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::SimpleSpace_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xercesc::InputSource& i,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::SimpleSpace > r (
+    ::SimpleSpace_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xercesc::InputSource& i,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::SimpleSpace > r (
+    ::SimpleSpace_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xercesc::InputSource& i,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::SimpleSpace > r (
+    ::SimpleSpace_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (const ::xercesc::DOMDocument& d,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::SimpleSpace > r (
+      ::SimpleSpace_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "SimpleSpace",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::SimpleSpace >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::SimpleSpace > r (
+      dynamic_cast< ::SimpleSpace* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "SimpleSpace",
+    "");
+}
+
+::std::auto_ptr< ::SimpleSpace >
+SimpleSpace_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "SimpleSpace",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::SimpleSpace >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::SimpleSpace > r (
+      dynamic_cast< ::SimpleSpace* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "SimpleSpace",
+    "");
+}
+
 ::std::auto_ptr< ::Body >
 Body_ (const ::std::string& u,
        ::xml_schema::flags f,
@@ -5457,6 +10987,2733 @@ Body_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
     n.name (),
     n.namespace_ (),
     "Body",
+    "");
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::std::string& u,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::HingeJoint > r (
+    ::HingeJoint_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::std::string& u,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint > r (
+    ::HingeJoint_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::std::string& u,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint > r (
+    ::HingeJoint_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::HingeJoint_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::HingeJoint_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::HingeJoint_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::HingeJoint_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::HingeJoint_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::HingeJoint_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xercesc::InputSource& i,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::HingeJoint > r (
+    ::HingeJoint_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xercesc::InputSource& i,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint > r (
+    ::HingeJoint_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xercesc::InputSource& i,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint > r (
+    ::HingeJoint_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (const ::xercesc::DOMDocument& d,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::HingeJoint > r (
+      ::HingeJoint_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "HingeJoint",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::HingeJoint >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::HingeJoint > r (
+      dynamic_cast< ::HingeJoint* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "HingeJoint",
+    "");
+}
+
+::std::auto_ptr< ::HingeJoint >
+HingeJoint_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "HingeJoint",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::HingeJoint >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::HingeJoint > r (
+      dynamic_cast< ::HingeJoint* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "HingeJoint",
+    "");
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::std::string& u,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::HingeJoint2 > r (
+    ::HingeJoint2_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::std::string& u,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint2 > r (
+    ::HingeJoint2_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::std::string& u,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint2 > r (
+    ::HingeJoint2_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::HingeJoint2_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::HingeJoint2_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::HingeJoint2_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::HingeJoint2_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::HingeJoint2_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::HingeJoint2_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xercesc::InputSource& i,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::HingeJoint2 > r (
+    ::HingeJoint2_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xercesc::InputSource& i,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint2 > r (
+    ::HingeJoint2_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xercesc::InputSource& i,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::HingeJoint2 > r (
+    ::HingeJoint2_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (const ::xercesc::DOMDocument& d,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::HingeJoint2 > r (
+      ::HingeJoint2_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "HingeJoint2",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::HingeJoint2 >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::HingeJoint2 > r (
+      dynamic_cast< ::HingeJoint2* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "HingeJoint2",
+    "");
+}
+
+::std::auto_ptr< ::HingeJoint2 >
+HingeJoint2_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "HingeJoint2",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::HingeJoint2 >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::HingeJoint2 > r (
+      dynamic_cast< ::HingeJoint2* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "HingeJoint2",
+    "");
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::std::string& u,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomCylinder > r (
+    ::GeomCylinder_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::std::string& u,
+               ::xml_schema::error_handler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCylinder > r (
+    ::GeomCylinder_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::std::string& u,
+               ::xercesc::DOMErrorHandler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCylinder > r (
+    ::GeomCylinder_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomCylinder_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               ::xml_schema::error_handler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomCylinder_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               ::xercesc::DOMErrorHandler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomCylinder_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               const ::std::string& sid,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomCylinder_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               const ::std::string& sid,
+               ::xml_schema::error_handler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomCylinder_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::std::istream& is,
+               const ::std::string& sid,
+               ::xercesc::DOMErrorHandler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomCylinder_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xercesc::InputSource& i,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomCylinder > r (
+    ::GeomCylinder_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xercesc::InputSource& i,
+               ::xml_schema::error_handler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCylinder > r (
+    ::GeomCylinder_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xercesc::InputSource& i,
+               ::xercesc::DOMErrorHandler& h,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCylinder > r (
+    ::GeomCylinder_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (const ::xercesc::DOMDocument& d,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::GeomCylinder > r (
+      ::GeomCylinder_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomCylinder",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomCylinder >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::GeomCylinder > r (
+      dynamic_cast< ::GeomCylinder* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomCylinder",
+    "");
+}
+
+::std::auto_ptr< ::GeomCylinder >
+GeomCylinder_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+               ::xml_schema::flags f,
+               const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomCylinder",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomCylinder >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::GeomCylinder > r (
+      dynamic_cast< ::GeomCylinder* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomCylinder",
+    "");
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::std::string& u,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomCapsule > r (
+    ::GeomCapsule_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::std::string& u,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCapsule > r (
+    ::GeomCapsule_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::std::string& u,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCapsule > r (
+    ::GeomCapsule_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomCapsule_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomCapsule_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomCapsule_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomCapsule_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomCapsule_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::std::istream& is,
+              const ::std::string& sid,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomCapsule_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xercesc::InputSource& i,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomCapsule > r (
+    ::GeomCapsule_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xercesc::InputSource& i,
+              ::xml_schema::error_handler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCapsule > r (
+    ::GeomCapsule_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xercesc::InputSource& i,
+              ::xercesc::DOMErrorHandler& h,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomCapsule > r (
+    ::GeomCapsule_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (const ::xercesc::DOMDocument& d,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::GeomCapsule > r (
+      ::GeomCapsule_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomCapsule",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomCapsule >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::GeomCapsule > r (
+      dynamic_cast< ::GeomCapsule* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomCapsule",
+    "");
+}
+
+::std::auto_ptr< ::GeomCapsule >
+GeomCapsule_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+              ::xml_schema::flags f,
+              const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomCapsule",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomCapsule >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::GeomCapsule > r (
+      dynamic_cast< ::GeomCapsule* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomCapsule",
+    "");
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::std::string& u,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomSphere > r (
+    ::GeomSphere_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::std::string& u,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomSphere > r (
+    ::GeomSphere_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::std::string& u,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomSphere > r (
+    ::GeomSphere_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomSphere_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomSphere_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomSphere_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomSphere_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomSphere_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomSphere_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xercesc::InputSource& i,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomSphere > r (
+    ::GeomSphere_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xercesc::InputSource& i,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomSphere > r (
+    ::GeomSphere_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xercesc::InputSource& i,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomSphere > r (
+    ::GeomSphere_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (const ::xercesc::DOMDocument& d,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::GeomSphere > r (
+      ::GeomSphere_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomSphere",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomSphere >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::GeomSphere > r (
+      dynamic_cast< ::GeomSphere* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomSphere",
+    "");
+}
+
+::std::auto_ptr< ::GeomSphere >
+GeomSphere_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomSphere",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomSphere >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::GeomSphere > r (
+      dynamic_cast< ::GeomSphere* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomSphere",
+    "");
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::std::string& u,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomPlane > r (
+    ::GeomPlane_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::std::string& u,
+            ::xml_schema::error_handler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomPlane > r (
+    ::GeomPlane_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::std::string& u,
+            ::xercesc::DOMErrorHandler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomPlane > r (
+    ::GeomPlane_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomPlane_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            ::xml_schema::error_handler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomPlane_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            ::xercesc::DOMErrorHandler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::GeomPlane_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            const ::std::string& sid,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomPlane_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            const ::std::string& sid,
+            ::xml_schema::error_handler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomPlane_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::std::istream& is,
+            const ::std::string& sid,
+            ::xercesc::DOMErrorHandler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::GeomPlane_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xercesc::InputSource& i,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::GeomPlane > r (
+    ::GeomPlane_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xercesc::InputSource& i,
+            ::xml_schema::error_handler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomPlane > r (
+    ::GeomPlane_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xercesc::InputSource& i,
+            ::xercesc::DOMErrorHandler& h,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::GeomPlane > r (
+    ::GeomPlane_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (const ::xercesc::DOMDocument& d,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::GeomPlane > r (
+      ::GeomPlane_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomPlane",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomPlane >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::GeomPlane > r (
+      dynamic_cast< ::GeomPlane* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomPlane",
+    "");
+}
+
+::std::auto_ptr< ::GeomPlane >
+GeomPlane_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+            ::xml_schema::flags f,
+            const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "GeomPlane",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::GeomPlane >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::GeomPlane > r (
+      dynamic_cast< ::GeomPlane* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "GeomPlane",
+    "");
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::std::string& u,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::Rotation > r (
+    ::Rotation_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::std::string& u,
+           ::xml_schema::error_handler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Rotation > r (
+    ::Rotation_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::std::string& u,
+           ::xercesc::DOMErrorHandler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Rotation > r (
+    ::Rotation_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Rotation_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           ::xml_schema::error_handler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Rotation_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           ::xercesc::DOMErrorHandler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Rotation_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           const ::std::string& sid,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Rotation_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           const ::std::string& sid,
+           ::xml_schema::error_handler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Rotation_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::std::istream& is,
+           const ::std::string& sid,
+           ::xercesc::DOMErrorHandler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Rotation_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xercesc::InputSource& i,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::Rotation > r (
+    ::Rotation_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xercesc::InputSource& i,
+           ::xml_schema::error_handler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Rotation > r (
+    ::Rotation_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xercesc::InputSource& i,
+           ::xercesc::DOMErrorHandler& h,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Rotation > r (
+    ::Rotation_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (const ::xercesc::DOMDocument& d,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::Rotation > r (
+      ::Rotation_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "Rotation",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::Rotation >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::Rotation > r (
+      dynamic_cast< ::Rotation* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "Rotation",
+    "");
+}
+
+::std::auto_ptr< ::Rotation >
+Rotation_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+           ::xml_schema::flags f,
+           const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "Rotation",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::Rotation >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::Rotation > r (
+      dynamic_cast< ::Rotation* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "Rotation",
+    "");
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::std::string& u,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::Vector > r (
+    ::Vector_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::std::string& u,
+         ::xml_schema::error_handler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Vector > r (
+    ::Vector_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::std::string& u,
+         ::xercesc::DOMErrorHandler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Vector > r (
+    ::Vector_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Vector_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         ::xml_schema::error_handler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Vector_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         ::xercesc::DOMErrorHandler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Vector_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         const ::std::string& sid,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Vector_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         const ::std::string& sid,
+         ::xml_schema::error_handler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Vector_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::std::istream& is,
+         const ::std::string& sid,
+         ::xercesc::DOMErrorHandler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Vector_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xercesc::InputSource& i,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::Vector > r (
+    ::Vector_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xercesc::InputSource& i,
+         ::xml_schema::error_handler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Vector > r (
+    ::Vector_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xercesc::InputSource& i,
+         ::xercesc::DOMErrorHandler& h,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Vector > r (
+    ::Vector_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (const ::xercesc::DOMDocument& d,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::Vector > r (
+      ::Vector_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "Vector",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::Vector >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::Vector > r (
+      dynamic_cast< ::Vector* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "Vector",
+    "");
+}
+
+::std::auto_ptr< ::Vector >
+Vector_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+         ::xml_schema::flags f,
+         const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "Vector",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::Vector >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::Vector > r (
+      dynamic_cast< ::Vector* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "Vector",
+    "");
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::std::string& u,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::Quaternion > r (
+    ::Quaternion_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::std::string& u,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Quaternion > r (
+    ::Quaternion_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::std::string& u,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (u, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Quaternion > r (
+    ::Quaternion_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Quaternion_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Quaternion_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is);
+  return ::Quaternion_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Quaternion_ (isrc, f, p);
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0,
+    (f & ::xml_schema::flags::keep_dom) == 0);
+
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Quaternion_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::std::istream& is,
+             const ::std::string& sid,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::xml::sax::std_input_source isrc (is, sid);
+  return ::Quaternion_ (isrc, h, f, p);
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xercesc::InputSource& i,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  h.throw_if_failed< ::xsd::cxx::tree::parsing< char > > ();
+
+  ::std::auto_ptr< ::Quaternion > r (
+    ::Quaternion_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xercesc::InputSource& i,
+             ::xml_schema::error_handler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Quaternion > r (
+    ::Quaternion_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xercesc::InputSource& i,
+             ::xercesc::DOMErrorHandler& h,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::xsd::cxx::xml::dom::parse< char > (i, h, p, f));
+
+  if (!d.get ())
+    throw ::xsd::cxx::tree::parsing< char > ();
+
+  ::std::auto_ptr< ::Quaternion > r (
+    ::Quaternion_ (
+      d, f | ::xml_schema::flags::own_dom, p));
+
+  return r;
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (const ::xercesc::DOMDocument& d,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties& p)
+{
+  if (f & ::xml_schema::flags::keep_dom)
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+      static_cast< ::xercesc::DOMDocument* > (d.cloneNode (true)));
+
+    ::std::auto_ptr< ::Quaternion > r (
+      ::Quaternion_ (
+        c, f | ::xml_schema::flags::own_dom, p));
+
+    return r;
+  }
+
+  const ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "Quaternion",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::Quaternion >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+    ::std::auto_ptr< ::Quaternion > r (
+      dynamic_cast< ::Quaternion* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "Quaternion",
+    "");
+}
+
+::std::auto_ptr< ::Quaternion >
+Quaternion_ (::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >& d,
+             ::xml_schema::flags f,
+             const ::xml_schema::properties&)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > c (
+    ((f & ::xml_schema::flags::keep_dom) &&
+     !(f & ::xml_schema::flags::own_dom))
+    ? static_cast< ::xercesc::DOMDocument* > (d->cloneNode (true))
+    : 0);
+
+  ::xercesc::DOMDocument& doc (c.get () ? *c : *d);
+  const ::xercesc::DOMElement& e (*doc.getDocumentElement ());
+
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (f & ::xml_schema::flags::keep_dom)
+    doc.setUserData (::xml_schema::dom::tree_node_key,
+                     (c.get () ? &c : &d),
+                     0);
+
+  ::xsd::cxx::tree::type_factory_map< char >& tfm (
+    ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+  ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+    tfm.create (
+      "Quaternion",
+      "",
+      &::xsd::cxx::tree::factory_impl< ::Quaternion >,
+      true, true, e, n, f, 0));
+
+  if (tmp.get () != 0)
+  {
+
+    ::std::auto_ptr< ::Quaternion > r (
+      dynamic_cast< ::Quaternion* > (tmp.get ()));
+
+    if (r.get ())
+      tmp.release ();
+    else
+      throw ::xsd::cxx::tree::not_derived< char > ();
+
+    return r;
+  }
+
+  throw ::xsd::cxx::tree::unexpected_element < char > (
+    n.name (),
+    n.namespace_ (),
+    "Quaternion",
     "");
 }
 
@@ -6346,6 +14603,185 @@ _xsd_SimpleSpace_type_serializer_init (
 
 
 void
+SimpleSpace_ (::std::ostream& o,
+              const ::SimpleSpace& s,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::SimpleSpace_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+SimpleSpace_ (::std::ostream& o,
+              const ::SimpleSpace& s,
+              ::xml_schema::error_handler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::SimpleSpace_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+SimpleSpace_ (::std::ostream& o,
+              const ::SimpleSpace& s,
+              ::xercesc::DOMErrorHandler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::SimpleSpace_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+SimpleSpace_ (::xercesc::XMLFormatTarget& t,
+              const ::SimpleSpace& s,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::SimpleSpace_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+SimpleSpace_ (::xercesc::XMLFormatTarget& t,
+              const ::SimpleSpace& s,
+              ::xml_schema::error_handler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::SimpleSpace_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+SimpleSpace_ (::xercesc::XMLFormatTarget& t,
+              const ::SimpleSpace& s,
+              ::xercesc::DOMErrorHandler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::SimpleSpace_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+SimpleSpace_ (::xercesc::DOMDocument& d,
+              const ::SimpleSpace& s,
+              ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::SimpleSpace) == typeid (s))
+  {
+    if (n.name () == "SimpleSpace" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "SimpleSpace",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "SimpleSpace",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+SimpleSpace_ (const ::SimpleSpace& s,
+              const ::xml_schema::namespace_infomap& m,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::SimpleSpace) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "SimpleSpace",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "SimpleSpace",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::SimpleSpace_ (*d, s, f);
+  return d;
+}
+
+void
 operator<< (::xercesc::DOMElement& e, const Body& i)
 {
   e << static_cast< const ::RSObject& > (i);
@@ -7001,6 +15437,33 @@ operator<< (::xercesc::DOMElement& e, const Joint& i)
           false, false, e, x);
     }
   }
+
+  // Param
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    for (Joint::Param_const_iterator
+         b (i.Param ().begin ()), n (i.Param ().end ());
+         b != n; ++b)
+    {
+      if (typeid (Joint::Param_type) == typeid (*b))
+      {
+        ::xercesc::DOMElement& s (
+          ::xsd::cxx::xml::dom::create_element (
+            "Param",
+            e));
+
+        s << *b;
+      }
+      else
+        tsm.serialize (
+          "Param",
+          "",
+          false, false, e, *b);
+    }
+  }
 }
 
 static
@@ -7088,6 +15551,467 @@ _xsd_HingeJoint_type_serializer_init (
 
 
 void
+HingeJoint_ (::std::ostream& o,
+             const ::HingeJoint& s,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+HingeJoint_ (::std::ostream& o,
+             const ::HingeJoint& s,
+             ::xml_schema::error_handler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint_ (::std::ostream& o,
+             const ::HingeJoint& s,
+             ::xercesc::DOMErrorHandler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint_ (::xercesc::XMLFormatTarget& t,
+             const ::HingeJoint& s,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+HingeJoint_ (::xercesc::XMLFormatTarget& t,
+             const ::HingeJoint& s,
+             ::xml_schema::error_handler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint_ (::xercesc::XMLFormatTarget& t,
+             const ::HingeJoint& s,
+             ::xercesc::DOMErrorHandler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint_ (::xercesc::DOMDocument& d,
+             const ::HingeJoint& s,
+             ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::HingeJoint) == typeid (s))
+  {
+    if (n.name () == "HingeJoint" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "HingeJoint",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "HingeJoint",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+HingeJoint_ (const ::HingeJoint& s,
+             const ::xml_schema::namespace_infomap& m,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::HingeJoint) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "HingeJoint",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "HingeJoint",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::HingeJoint_ (*d, s, f);
+  return d;
+}
+
+void
+operator<< (::xercesc::DOMElement& e, const HingeJoint2& i)
+{
+  e << static_cast< const ::Joint& > (i);
+
+  // Anchor
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    if (i.Anchor ())
+    {
+      const HingeJoint2::Anchor_type& x (*i.Anchor ());
+      if (typeid (HingeJoint2::Anchor_type) == typeid (x))
+      {
+        ::xercesc::DOMElement& s (
+          ::xsd::cxx::xml::dom::create_element (
+            "Anchor",
+            e));
+
+        s << x;
+      }
+      else
+        tsm.serialize (
+          "Anchor",
+          "",
+          false, false, e, x);
+    }
+  }
+
+  // Axis1
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    if (i.Axis1 ())
+    {
+      const HingeJoint2::Axis1_type& x (*i.Axis1 ());
+      if (typeid (HingeJoint2::Axis1_type) == typeid (x))
+      {
+        ::xercesc::DOMElement& s (
+          ::xsd::cxx::xml::dom::create_element (
+            "Axis1",
+            e));
+
+        s << x;
+      }
+      else
+        tsm.serialize (
+          "Axis1",
+          "",
+          false, false, e, x);
+    }
+  }
+
+  // Axis2
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    if (i.Axis2 ())
+    {
+      const HingeJoint2::Axis2_type& x (*i.Axis2 ());
+      if (typeid (HingeJoint2::Axis2_type) == typeid (x))
+      {
+        ::xercesc::DOMElement& s (
+          ::xsd::cxx::xml::dom::create_element (
+            "Axis2",
+            e));
+
+        s << x;
+      }
+      else
+        tsm.serialize (
+          "Axis2",
+          "",
+          false, false, e, x);
+    }
+  }
+
+  // Torque
+  //
+  if (i.Torque ())
+  {
+    ::xercesc::DOMElement& s (
+      ::xsd::cxx::xml::dom::create_element (
+        "Torque",
+        e));
+
+    s << *i.Torque ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, HingeJoint2 >
+_xsd_HingeJoint2_type_serializer_init (
+  "HingeJoint2",
+  "");
+
+
+void
+HingeJoint2_ (::std::ostream& o,
+              const ::HingeJoint2& s,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint2_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+HingeJoint2_ (::std::ostream& o,
+              const ::HingeJoint2& s,
+              ::xml_schema::error_handler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint2_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint2_ (::std::ostream& o,
+              const ::HingeJoint2& s,
+              ::xercesc::DOMErrorHandler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint2_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint2_ (::xercesc::XMLFormatTarget& t,
+              const ::HingeJoint2& s,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint2_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+HingeJoint2_ (::xercesc::XMLFormatTarget& t,
+              const ::HingeJoint2& s,
+              ::xml_schema::error_handler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint2_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint2_ (::xercesc::XMLFormatTarget& t,
+              const ::HingeJoint2& s,
+              ::xercesc::DOMErrorHandler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::HingeJoint2_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+HingeJoint2_ (::xercesc::DOMDocument& d,
+              const ::HingeJoint2& s,
+              ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::HingeJoint2) == typeid (s))
+  {
+    if (n.name () == "HingeJoint2" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "HingeJoint2",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "HingeJoint2",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+HingeJoint2_ (const ::HingeJoint2& s,
+              const ::xml_schema::namespace_infomap& m,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::HingeJoint2) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "HingeJoint2",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "HingeJoint2",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::HingeJoint2_ (*d, s, f);
+  return d;
+}
+
+void
 operator<< (::xercesc::DOMElement& e, const GeomBox& i)
 {
   e << static_cast< const ::GeomObject& > (i);
@@ -7164,6 +16088,185 @@ _xsd_GeomCylinder_type_serializer_init (
 
 
 void
+GeomCylinder_ (::std::ostream& o,
+               const ::GeomCylinder& s,
+               const ::xml_schema::namespace_infomap& m,
+               const ::std::string& e,
+               ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCylinder_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomCylinder_ (::std::ostream& o,
+               const ::GeomCylinder& s,
+               ::xml_schema::error_handler& h,
+               const ::xml_schema::namespace_infomap& m,
+               const ::std::string& e,
+               ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCylinder_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCylinder_ (::std::ostream& o,
+               const ::GeomCylinder& s,
+               ::xercesc::DOMErrorHandler& h,
+               const ::xml_schema::namespace_infomap& m,
+               const ::std::string& e,
+               ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCylinder_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCylinder_ (::xercesc::XMLFormatTarget& t,
+               const ::GeomCylinder& s,
+               const ::xml_schema::namespace_infomap& m,
+               const ::std::string& e,
+               ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCylinder_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomCylinder_ (::xercesc::XMLFormatTarget& t,
+               const ::GeomCylinder& s,
+               ::xml_schema::error_handler& h,
+               const ::xml_schema::namespace_infomap& m,
+               const ::std::string& e,
+               ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCylinder_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCylinder_ (::xercesc::XMLFormatTarget& t,
+               const ::GeomCylinder& s,
+               ::xercesc::DOMErrorHandler& h,
+               const ::xml_schema::namespace_infomap& m,
+               const ::std::string& e,
+               ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCylinder_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCylinder_ (::xercesc::DOMDocument& d,
+               const ::GeomCylinder& s,
+               ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::GeomCylinder) == typeid (s))
+  {
+    if (n.name () == "GeomCylinder" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "GeomCylinder",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "GeomCylinder",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomCylinder_ (const ::GeomCylinder& s,
+               const ::xml_schema::namespace_infomap& m,
+               ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::GeomCylinder) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "GeomCylinder",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "GeomCylinder",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::GeomCylinder_ (*d, s, f);
+  return d;
+}
+
+void
 operator<< (::xercesc::DOMElement& e, const GeomCapsule& i)
 {
   e << static_cast< const ::GeomObject& > (i);
@@ -7201,6 +16304,185 @@ _xsd_GeomCapsule_type_serializer_init (
 
 
 void
+GeomCapsule_ (::std::ostream& o,
+              const ::GeomCapsule& s,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCapsule_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomCapsule_ (::std::ostream& o,
+              const ::GeomCapsule& s,
+              ::xml_schema::error_handler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCapsule_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCapsule_ (::std::ostream& o,
+              const ::GeomCapsule& s,
+              ::xercesc::DOMErrorHandler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCapsule_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCapsule_ (::xercesc::XMLFormatTarget& t,
+              const ::GeomCapsule& s,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCapsule_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomCapsule_ (::xercesc::XMLFormatTarget& t,
+              const ::GeomCapsule& s,
+              ::xml_schema::error_handler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCapsule_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCapsule_ (::xercesc::XMLFormatTarget& t,
+              const ::GeomCapsule& s,
+              ::xercesc::DOMErrorHandler& h,
+              const ::xml_schema::namespace_infomap& m,
+              const ::std::string& e,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomCapsule_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomCapsule_ (::xercesc::DOMDocument& d,
+              const ::GeomCapsule& s,
+              ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::GeomCapsule) == typeid (s))
+  {
+    if (n.name () == "GeomCapsule" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "GeomCapsule",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "GeomCapsule",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomCapsule_ (const ::GeomCapsule& s,
+              const ::xml_schema::namespace_infomap& m,
+              ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::GeomCapsule) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "GeomCapsule",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "GeomCapsule",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::GeomCapsule_ (*d, s, f);
+  return d;
+}
+
+void
 operator<< (::xercesc::DOMElement& e, const GeomSphere& i)
 {
   e << static_cast< const ::GeomObject& > (i);
@@ -7224,6 +16506,185 @@ _xsd_GeomSphere_type_serializer_init (
   "GeomSphere",
   "");
 
+
+void
+GeomSphere_ (::std::ostream& o,
+             const ::GeomSphere& s,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomSphere_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomSphere_ (::std::ostream& o,
+             const ::GeomSphere& s,
+             ::xml_schema::error_handler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomSphere_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomSphere_ (::std::ostream& o,
+             const ::GeomSphere& s,
+             ::xercesc::DOMErrorHandler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomSphere_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomSphere_ (::xercesc::XMLFormatTarget& t,
+             const ::GeomSphere& s,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomSphere_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomSphere_ (::xercesc::XMLFormatTarget& t,
+             const ::GeomSphere& s,
+             ::xml_schema::error_handler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomSphere_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomSphere_ (::xercesc::XMLFormatTarget& t,
+             const ::GeomSphere& s,
+             ::xercesc::DOMErrorHandler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomSphere_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomSphere_ (::xercesc::DOMDocument& d,
+             const ::GeomSphere& s,
+             ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::GeomSphere) == typeid (s))
+  {
+    if (n.name () == "GeomSphere" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "GeomSphere",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "GeomSphere",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomSphere_ (const ::GeomSphere& s,
+             const ::xml_schema::namespace_infomap& m,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::GeomSphere) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "GeomSphere",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "GeomSphere",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::GeomSphere_ (*d, s, f);
+  return d;
+}
 
 void
 operator<< (::xercesc::DOMElement& e, const GeomPlane& i)
@@ -7301,6 +16762,185 @@ _xsd_GeomPlane_type_serializer_init (
   "GeomPlane",
   "");
 
+
+void
+GeomPlane_ (::std::ostream& o,
+            const ::GeomPlane& s,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomPlane_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomPlane_ (::std::ostream& o,
+            const ::GeomPlane& s,
+            ::xml_schema::error_handler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomPlane_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomPlane_ (::std::ostream& o,
+            const ::GeomPlane& s,
+            ::xercesc::DOMErrorHandler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomPlane_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomPlane_ (::xercesc::XMLFormatTarget& t,
+            const ::GeomPlane& s,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomPlane_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+GeomPlane_ (::xercesc::XMLFormatTarget& t,
+            const ::GeomPlane& s,
+            ::xml_schema::error_handler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomPlane_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomPlane_ (::xercesc::XMLFormatTarget& t,
+            const ::GeomPlane& s,
+            ::xercesc::DOMErrorHandler& h,
+            const ::xml_schema::namespace_infomap& m,
+            const ::std::string& e,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::GeomPlane_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+GeomPlane_ (::xercesc::DOMDocument& d,
+            const ::GeomPlane& s,
+            ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::GeomPlane) == typeid (s))
+  {
+    if (n.name () == "GeomPlane" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "GeomPlane",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "GeomPlane",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+GeomPlane_ (const ::GeomPlane& s,
+            const ::xml_schema::namespace_infomap& m,
+            ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::GeomPlane) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "GeomPlane",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "GeomPlane",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::GeomPlane_ (*d, s, f);
+  return d;
+}
 
 void
 operator<< (::xercesc::DOMElement& e, const Rotation& i)
@@ -7385,6 +17025,185 @@ _xsd_Rotation_type_serializer_init (
 
 
 void
+Rotation_ (::std::ostream& o,
+           const ::Rotation& s,
+           const ::xml_schema::namespace_infomap& m,
+           const ::std::string& e,
+           ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Rotation_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Rotation_ (::std::ostream& o,
+           const ::Rotation& s,
+           ::xml_schema::error_handler& h,
+           const ::xml_schema::namespace_infomap& m,
+           const ::std::string& e,
+           ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Rotation_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Rotation_ (::std::ostream& o,
+           const ::Rotation& s,
+           ::xercesc::DOMErrorHandler& h,
+           const ::xml_schema::namespace_infomap& m,
+           const ::std::string& e,
+           ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Rotation_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Rotation_ (::xercesc::XMLFormatTarget& t,
+           const ::Rotation& s,
+           const ::xml_schema::namespace_infomap& m,
+           const ::std::string& e,
+           ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Rotation_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Rotation_ (::xercesc::XMLFormatTarget& t,
+           const ::Rotation& s,
+           ::xml_schema::error_handler& h,
+           const ::xml_schema::namespace_infomap& m,
+           const ::std::string& e,
+           ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Rotation_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Rotation_ (::xercesc::XMLFormatTarget& t,
+           const ::Rotation& s,
+           ::xercesc::DOMErrorHandler& h,
+           const ::xml_schema::namespace_infomap& m,
+           const ::std::string& e,
+           ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Rotation_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Rotation_ (::xercesc::DOMDocument& d,
+           const ::Rotation& s,
+           ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::Rotation) == typeid (s))
+  {
+    if (n.name () == "Rotation" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "Rotation",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "Rotation",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+Rotation_ (const ::Rotation& s,
+           const ::xml_schema::namespace_infomap& m,
+           ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::Rotation) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "Rotation",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "Rotation",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::Rotation_ (*d, s, f);
+  return d;
+}
+
+void
 operator<< (::xercesc::DOMElement& e, const Vector& i)
 {
   e << static_cast< const ::xml_schema::type& > (i);
@@ -7432,6 +17251,185 @@ _xsd_Vector_type_serializer_init (
   "Vector",
   "");
 
+
+void
+Vector_ (::std::ostream& o,
+         const ::Vector& s,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Vector_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Vector_ (::std::ostream& o,
+         const ::Vector& s,
+         ::xml_schema::error_handler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Vector_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Vector_ (::std::ostream& o,
+         const ::Vector& s,
+         ::xercesc::DOMErrorHandler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Vector_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Vector_ (::xercesc::XMLFormatTarget& t,
+         const ::Vector& s,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Vector_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Vector_ (::xercesc::XMLFormatTarget& t,
+         const ::Vector& s,
+         ::xml_schema::error_handler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Vector_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Vector_ (::xercesc::XMLFormatTarget& t,
+         const ::Vector& s,
+         ::xercesc::DOMErrorHandler& h,
+         const ::xml_schema::namespace_infomap& m,
+         const ::std::string& e,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Vector_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Vector_ (::xercesc::DOMDocument& d,
+         const ::Vector& s,
+         ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::Vector) == typeid (s))
+  {
+    if (n.name () == "Vector" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "Vector",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "Vector",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+Vector_ (const ::Vector& s,
+         const ::xml_schema::namespace_infomap& m,
+         ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::Vector) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "Vector",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "Vector",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::Vector_ (*d, s, f);
+  return d;
+}
 
 void
 operator<< (::xercesc::DOMElement& e, const Quaternion& i)
@@ -7495,6 +17493,185 @@ _xsd_Quaternion_type_serializer_init (
 
 
 void
+Quaternion_ (::std::ostream& o,
+             const ::Quaternion& s,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Quaternion_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Quaternion_ (::std::ostream& o,
+             const ::Quaternion& s,
+             ::xml_schema::error_handler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xsd::cxx::xml::auto_initializer i (
+    (f & ::xml_schema::flags::dont_initialize) == 0);
+
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Quaternion_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Quaternion_ (::std::ostream& o,
+             const ::Quaternion& s,
+             ::xercesc::DOMErrorHandler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Quaternion_ (s, m, f));
+  ::xsd::cxx::xml::dom::ostream_format_target t (o);
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Quaternion_ (::xercesc::XMLFormatTarget& t,
+             const ::Quaternion& s,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Quaternion_ (s, m, f));
+
+  ::xsd::cxx::tree::error_handler< char > h;
+
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    h.throw_if_failed< ::xsd::cxx::tree::serialization< char > > ();
+  }
+}
+
+void
+Quaternion_ (::xercesc::XMLFormatTarget& t,
+             const ::Quaternion& s,
+             ::xml_schema::error_handler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Quaternion_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Quaternion_ (::xercesc::XMLFormatTarget& t,
+             const ::Quaternion& s,
+             ::xercesc::DOMErrorHandler& h,
+             const ::xml_schema::namespace_infomap& m,
+             const ::std::string& e,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d (
+    ::Quaternion_ (s, m, f));
+  if (!::xsd::cxx::xml::dom::serialize (t, *d, e, h, f))
+  {
+    throw ::xsd::cxx::tree::serialization< char > ();
+  }
+}
+
+void
+Quaternion_ (::xercesc::DOMDocument& d,
+             const ::Quaternion& s,
+             ::xml_schema::flags)
+{
+  ::xercesc::DOMElement& e (*d.getDocumentElement ());
+  const ::xsd::cxx::xml::qualified_name< char > n (
+    ::xsd::cxx::xml::dom::name< char > (e));
+
+  if (typeid (::Quaternion) == typeid (s))
+  {
+    if (n.name () == "Quaternion" &&
+        n.namespace_ () == "")
+    {
+      e << s;
+    }
+    else
+    {
+      throw ::xsd::cxx::tree::unexpected_element < char > (
+        n.name (),
+        n.namespace_ (),
+        "Quaternion",
+        "");
+    }
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    tsm.serialize (
+      "Quaternion",
+      "",
+      e, n, s);
+  }
+}
+
+::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument >
+Quaternion_ (const ::Quaternion& s,
+             const ::xml_schema::namespace_infomap& m,
+             ::xml_schema::flags f)
+{
+  ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > d;
+
+  if (typeid (::Quaternion) == typeid (s))
+  {
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      ::xsd::cxx::xml::dom::serialize< char > (
+        "Quaternion",
+        "",
+        m, f));
+    d = r;
+  }
+  else
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    ::xml_schema::dom::auto_ptr< ::xercesc::DOMDocument > r (
+      tsm.serialize (
+        "Quaternion",
+        "",
+        m, s, f));
+    d = r;
+  }
+
+  ::Quaternion_ (*d, s, f);
+  return d;
+}
+
+void
 operator<< (::xercesc::DOMElement& e, const Foo& i)
 {
   e << static_cast< const ::RSObject& > (i);
@@ -7504,6 +17681,1276 @@ static
 const ::xsd::cxx::tree::type_serializer_initializer< 0, char, Foo >
 _xsd_Foo_type_serializer_init (
   "Foo",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const Param& i)
+{
+  e << static_cast< const ::xml_schema::type& > (i);
+}
+
+void
+operator<< (::xercesc::DOMAttr&,const Param&)
+{
+}
+
+void
+operator<< (::xml_schema::list_stream&,
+            const Param&)
+{
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, Param >
+_xsd_Param_type_serializer_init (
+  "Param",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramBounce& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramBounce::Value_type& x (i.Value ());
+    if (typeid (paramBounce::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramBounce >
+_xsd_paramBounce_type_serializer_init (
+  "paramBounce",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamBounce& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamBounce >
+_xsd_ParamBounce_type_serializer_init (
+  "ParamBounce",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamBounce2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamBounce2 >
+_xsd_ParamBounce2_type_serializer_init (
+  "ParamBounce2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamBounce3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamBounce3 >
+_xsd_ParamBounce3_type_serializer_init (
+  "ParamBounce3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramCFM& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramCFM::Value_type& x (i.Value ());
+    if (typeid (paramCFM::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramCFM >
+_xsd_paramCFM_type_serializer_init (
+  "paramCFM",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamCFM& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamCFM >
+_xsd_ParamCFM_type_serializer_init (
+  "ParamCFM",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamCFM2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamCFM2 >
+_xsd_ParamCFM2_type_serializer_init (
+  "ParamCFM2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamCFM3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamCFM3 >
+_xsd_ParamCFM3_type_serializer_init (
+  "ParamCFM3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramFMax& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramFMax::Value_type& x (i.Value ());
+    if (typeid (paramFMax::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramFMax >
+_xsd_paramFMax_type_serializer_init (
+  "paramFMax",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamFMax& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamFMax >
+_xsd_ParamFMax_type_serializer_init (
+  "ParamFMax",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamFMax2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamFMax2 >
+_xsd_ParamFMax2_type_serializer_init (
+  "ParamFMax2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamFMax3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamFMax3 >
+_xsd_ParamFMax3_type_serializer_init (
+  "ParamFMax3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramFudgeFactor& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramFudgeFactor::Value_type& x (i.Value ());
+    if (typeid (paramFudgeFactor::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramFudgeFactor >
+_xsd_paramFudgeFactor_type_serializer_init (
+  "paramFudgeFactor",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamFudgeFactor& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamFudgeFactor >
+_xsd_ParamFudgeFactor_type_serializer_init (
+  "ParamFudgeFactor",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamFudgeFactor2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamFudgeFactor2 >
+_xsd_ParamFudgeFactor2_type_serializer_init (
+  "ParamFudgeFactor2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamFudgeFactor3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamFudgeFactor3 >
+_xsd_ParamFudgeFactor3_type_serializer_init (
+  "ParamFudgeFactor3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamGroup& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamGroup >
+_xsd_ParamGroup_type_serializer_init (
+  "ParamGroup",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramHiStop& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramHiStop::Value_type& x (i.Value ());
+    if (typeid (paramHiStop::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramHiStop >
+_xsd_paramHiStop_type_serializer_init (
+  "paramHiStop",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamHiStop& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamHiStop >
+_xsd_ParamHiStop_type_serializer_init (
+  "ParamHiStop",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamHiStop2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamHiStop2 >
+_xsd_ParamHiStop2_type_serializer_init (
+  "ParamHiStop2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamHiStop3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamHiStop3 >
+_xsd_ParamHiStop3_type_serializer_init (
+  "ParamHiStop3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramLoStop& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramLoStop::Value_type& x (i.Value ());
+    if (typeid (paramLoStop::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramLoStop >
+_xsd_paramLoStop_type_serializer_init (
+  "paramLoStop",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamLoStop& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamLoStop >
+_xsd_ParamLoStop_type_serializer_init (
+  "ParamLoStop",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamLoStop2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamLoStop2 >
+_xsd_ParamLoStop2_type_serializer_init (
+  "ParamLoStop2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamLoStop3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamLoStop3 >
+_xsd_ParamLoStop3_type_serializer_init (
+  "ParamLoStop3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramStopCFM& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramStopCFM::Value_type& x (i.Value ());
+    if (typeid (paramStopCFM::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramStopCFM >
+_xsd_paramStopCFM_type_serializer_init (
+  "paramStopCFM",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamStopCFM& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamStopCFM >
+_xsd_ParamStopCFM_type_serializer_init (
+  "ParamStopCFM",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamStopCFM2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamStopCFM2 >
+_xsd_ParamStopCFM2_type_serializer_init (
+  "ParamStopCFM2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamStopCFM3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamStopCFM3 >
+_xsd_ParamStopCFM3_type_serializer_init (
+  "ParamStopCFM3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramStopERP& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramStopERP::Value_type& x (i.Value ());
+    if (typeid (paramStopERP::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramStopERP >
+_xsd_paramStopERP_type_serializer_init (
+  "paramStopERP",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamStopERP& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamStopERP >
+_xsd_ParamStopERP_type_serializer_init (
+  "ParamStopERP",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamStopERP2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamStopERP2 >
+_xsd_ParamStopERP2_type_serializer_init (
+  "ParamStopERP2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamStopERP3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamStopERP3 >
+_xsd_ParamStopERP3_type_serializer_init (
+  "ParamStopERP3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramSuspensionCFM& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramSuspensionCFM::Value_type& x (i.Value ());
+    if (typeid (paramSuspensionCFM::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramSuspensionCFM >
+_xsd_paramSuspensionCFM_type_serializer_init (
+  "paramSuspensionCFM",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamSuspensionCFM& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamSuspensionCFM >
+_xsd_ParamSuspensionCFM_type_serializer_init (
+  "ParamSuspensionCFM",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamSuspensionCFM2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamSuspensionCFM2 >
+_xsd_ParamSuspensionCFM2_type_serializer_init (
+  "ParamSuspensionCFM2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamSuspensionCFM3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamSuspensionCFM3 >
+_xsd_ParamSuspensionCFM3_type_serializer_init (
+  "ParamSuspensionCFM3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramSuspensionERP& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramSuspensionERP::Value_type& x (i.Value ());
+    if (typeid (paramSuspensionERP::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramSuspensionERP >
+_xsd_paramSuspensionERP_type_serializer_init (
+  "paramSuspensionERP",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamSuspensionERP& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamSuspensionERP >
+_xsd_ParamSuspensionERP_type_serializer_init (
+  "ParamSuspensionERP",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamSuspensionERP2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamSuspensionERP2 >
+_xsd_ParamSuspensionERP2_type_serializer_init (
+  "ParamSuspensionERP2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamSuspensionERP3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamSuspensionERP3 >
+_xsd_ParamSuspensionERP3_type_serializer_init (
+  "ParamSuspensionERP3",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const paramVel& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const paramVel::Value_type& x (i.Value ());
+    if (typeid (paramVel::Value_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "Value",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "Value",
+        "",
+        false, false, e, x);
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, paramVel >
+_xsd_paramVel_type_serializer_init (
+  "paramVel",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamVel& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamVel >
+_xsd_ParamVel_type_serializer_init (
+  "ParamVel",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamVel2& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamVel2 >
+_xsd_ParamVel2_type_serializer_init (
+  "ParamVel2",
+  "");
+
+
+void
+operator<< (::xercesc::DOMElement& e, const ParamVel3& i)
+{
+  e << static_cast< const ::Param& > (i);
+
+  // Value
+  //
+  if (i.Value ())
+  {
+    ::xercesc::DOMAttr& a (
+      ::xsd::cxx::xml::dom::create_attribute (
+        "Value",
+        e));
+
+    a << *i.Value ();
+  }
+}
+
+static
+const ::xsd::cxx::tree::type_serializer_initializer< 0, char, ParamVel3 >
+_xsd_ParamVel3_type_serializer_init (
+  "ParamVel3",
   "");
 
 

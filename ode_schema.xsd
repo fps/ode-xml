@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <xsd:schema 
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-	xmlns:xi="http://www.w3.org/2001/XInclude"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <xsd:complexType name="RSObject">
@@ -78,6 +77,7 @@
 		</xsd:extension>		  
 	 </xsd:complexContent>
   </xsd:complexType>
+  <xsd:element name="SimpleSpace" type="SimpleSpace"/>
 
   <xsd:complexType name="Body">
 	 <xsd:complexContent>
@@ -130,6 +130,7 @@
 			 <xsd:element name="Feedback" type="xsd:boolean" minOccurs="0"/>
 			 <xsd:element name="Body1" type="xsd:string" minOccurs="0"/>
 			 <xsd:element name="Body2" type="xsd:string" minOccurs="0"/>
+			 <xsd:element name="Param" type="Param" minOccurs="0" maxOccurs="unbounded"/>
 		  </xsd:sequence>
 		</xsd:extension>		  
 	 </xsd:complexContent>
@@ -146,6 +147,22 @@
 		</xsd:extension>		  
 	 </xsd:complexContent>
   </xsd:complexType>
+  <xsd:element name="HingeJoint" type="HingeJoint"/>
+
+
+  <xsd:complexType name="HingeJoint2">
+	 <xsd:complexContent>
+		<xsd:extension base="Joint">
+		  <xsd:sequence>
+ 			 <xsd:element name="Anchor" type="Vector" minOccurs="0"/>
+ 			 <xsd:element name="Axis1" type="Vector" minOccurs="0"/>
+ 			 <xsd:element name="Axis2" type="Vector" minOccurs="0"/>
+ 			 <xsd:element name="Torque" type="xsd:float" minOccurs="0"/>
+		  </xsd:sequence>
+		</xsd:extension>		  
+	 </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="HingeJoint2" type="HingeJoint2"/>
 
   <xsd:complexType name="GeomBox">
 	 <xsd:complexContent>
@@ -167,6 +184,7 @@
 		</xsd:extension>		  
 	 </xsd:complexContent>
   </xsd:complexType>
+  <xsd:element name="GeomCylinder" type="GeomCylinder"/>
 
   <xsd:complexType name="GeomCapsule">
 	 <xsd:complexContent>
@@ -178,6 +196,7 @@
 		</xsd:extension>		  
 	 </xsd:complexContent>
   </xsd:complexType>
+  <xsd:element name="GeomCapsule" type="GeomCapsule"/>
 
   <xsd:complexType name="GeomSphere">
 	 <xsd:complexContent>
@@ -188,6 +207,7 @@
 		</xsd:extension>		  
 	 </xsd:complexContent>
   </xsd:complexType>
+  <xsd:element name="GeomSphere" type="GeomSphere"/>
 
   <xsd:complexType name="GeomPlane">
 	 <xsd:complexContent>
@@ -200,6 +220,7 @@
 		</xsd:extension>		  
 	 </xsd:complexContent>
   </xsd:complexType>
+  <xsd:element name="GeomPlane" type="GeomPlane"/>
 
   <xsd:complexType name="Rotation">
 	 <xsd:complexContent>
@@ -212,12 +233,14 @@
 		</xsd:extension>		  
 	 </xsd:complexContent>
   </xsd:complexType>
+  <xsd:element name="Rotation" type="Rotation"/>
 
   <xsd:complexType name="Vector">
 	 <xsd:attribute name="X" type="xsd:float"/>
 	 <xsd:attribute name="Y" type="xsd:float"/>
 	 <xsd:attribute name="Z" type="xsd:float"/>
   </xsd:complexType>
+  <xsd:element name="Vector" type="Vector"/>
 
   <xsd:complexType name="Quaternion">
 	 <xsd:attribute name="W" type="xsd:float"/>
@@ -225,33 +248,7 @@
 	 <xsd:attribute name="J" type="xsd:float"/>
 	 <xsd:attribute name="K" type="xsd:float"/>
   </xsd:complexType>
-
-<!--
-  <xsd:complexType name="Vector">
-	 <xsd:complexContent>
-		<xsd:extension base="RSObject">
-		  <xsd:sequence>
-			 <xsd:element name="X" type="xsd:float"/>
-			 <xsd:element name="Y" type="xsd:float"/>
-			 <xsd:element name="Z" type="xsd:float"/>
-		  </xsd:sequence>
-		</xsd:extension>		  
-	 </xsd:complexContent>
-  </xsd:complexType>
-
-  <xsd:complexType name="Quaternion">
-	 <xsd:complexContent>
-		<xsd:extension base="RSObject">
-		  <xsd:sequence>
-			 <xsd:element name="W" type="xsd:float"/>
-			 <xsd:element name="I" type="xsd:float"/>
-			 <xsd:element name="J" type="xsd:float"/>
-			 <xsd:element name="K" type="xsd:float"/>
-		  </xsd:sequence>
-		</xsd:extension>		  
-	 </xsd:complexContent>
-  </xsd:complexType>
--->
+  <xsd:element name="Quaternion" type="Quaternion"/>
 
   <xsd:complexType name="Foo">
 	 <xsd:complexContent>
@@ -262,4 +259,389 @@
 	 </xsd:complexContent>
   </xsd:complexType>
 
+  <xsd:complexType name="Param" abstract="true">
+  </xsd:complexType>
+
+  <xsd:complexType name="paramBounce">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ParamBounce">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ParamBounce2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		  </xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ParamBounce3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramCFM">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ParamCFM">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+  
+  <xsd:complexType name="ParamCFM2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamCFM3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramFMax">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamFMax">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamFMax2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamFMax3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramFudgeFactor">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamFudgeFactor">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamFudgeFactor2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamFudgeFactor3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamGroup">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramHiStop">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamHiStop">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamHiStop2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamHiStop3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramLoStop">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamLoStop">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamLoStop2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamLoStop3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramStopCFM">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamStopCFM">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamStopCFM2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamStopCFM3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramStopERP">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamStopERP">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamStopERP2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamStopERP3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="paramSuspensionCFM">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamSuspensionCFM">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamSuspensionCFM2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamSuspensionCFM3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramSuspensionERP">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamSuspensionERP">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamSuspensionERP2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamSuspensionERP3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramVel">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:sequence>
+			 <xsd:element name="Value" type="Vector"/>
+		  </xsd:sequence>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamVel">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamVel2">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParamVel3">
+	 <xsd:complexContent>
+		<xsd:extension base="Param">
+		  <xsd:attribute name="Value" type="xsd:float"/>
+		</xsd:extension>
+	 </xsd:complexContent>
+  </xsd:complexType>
 </xsd:schema>
