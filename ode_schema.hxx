@@ -450,6 +450,23 @@ class Sim: public ::RSObject
   void
   Geom (const Geom_sequence& s);
 
+  // Joint
+  // 
+  typedef ::Joint Joint_type;
+  typedef ::xsd::cxx::tree::sequence< Joint_type > Joint_sequence;
+  typedef Joint_sequence::iterator Joint_iterator;
+  typedef Joint_sequence::const_iterator Joint_const_iterator;
+  typedef ::xsd::cxx::tree::traits< Joint_type, char > Joint_traits;
+
+  const Joint_sequence&
+  Joint () const;
+
+  Joint_sequence&
+  Joint ();
+
+  void
+  Joint (const Joint_sequence& s);
+
   // Constructors.
   //
   Sim ();
@@ -481,6 +498,7 @@ class Sim: public ::RSObject
   Space_sequence Space_;
   Body_sequence Body_;
   Geom_sequence Geom_;
+  Joint_sequence Joint_;
 };
 
 class World: public ::RSObject
@@ -957,6 +975,23 @@ class SimpleSpace: public ::SpaceBase
 class Body: public ::RSObject
 {
   public:
+  // World
+  // 
+  typedef ::xml_schema::string World_type;
+  typedef ::xsd::cxx::tree::traits< World_type, char > World_traits;
+
+  const World_type&
+  World () const;
+
+  World_type&
+  World ();
+
+  void
+  World (const World_type& x);
+
+  void
+  World (::std::auto_ptr< World_type > p);
+
   // Space
   // 
   typedef ::xml_schema::string Space_type;
@@ -977,27 +1012,6 @@ class Body: public ::RSObject
 
   void
   Space (::std::auto_ptr< Space_type > p);
-
-  // World
-  // 
-  typedef ::xml_schema::string World_type;
-  typedef ::xsd::cxx::tree::optional< World_type > World_optional;
-  typedef ::xsd::cxx::tree::traits< World_type, char > World_traits;
-
-  const World_optional&
-  World () const;
-
-  World_optional&
-  World ();
-
-  void
-  World (const World_type& x);
-
-  void
-  World (const World_optional& x);
-
-  void
-  World (::std::auto_ptr< World_type > p);
 
   // Enabled
   // 
@@ -1244,7 +1258,9 @@ class Body: public ::RSObject
 
   // Constructors.
   //
-  Body ();
+  Body (const World_type&);
+
+  Body (::std::auto_ptr< World_type >&);
 
   Body (const ::xercesc::DOMElement& e,
         ::xml_schema::flags f = 0,
@@ -1269,8 +1285,8 @@ class Body: public ::RSObject
          ::xml_schema::flags);
 
   protected:
+  ::xsd::cxx::tree::one< World_type > World_;
   Space_optional Space_;
-  World_optional World_;
   Enabled_optional Enabled_;
   AngularVel_optional AngularVel_;
   FiniteRotationAxis_optional FiniteRotationAxis_;
@@ -1419,6 +1435,23 @@ class BoxTotalMass: public ::Mass
 class Joint: public ::RSObject
 {
   public:
+  // World
+  // 
+  typedef ::xml_schema::string World_type;
+  typedef ::xsd::cxx::tree::traits< World_type, char > World_traits;
+
+  const World_type&
+  World () const;
+
+  World_type&
+  World ();
+
+  void
+  World (const World_type& x);
+
+  void
+  World (::std::auto_ptr< World_type > p);
+
   // Feedback
   // 
   typedef ::xml_schema::boolean Feedback_type;
@@ -1498,7 +1531,9 @@ class Joint: public ::RSObject
 
   // Constructors.
   //
-  Joint ();
+  Joint (const World_type&);
+
+  Joint (::std::auto_ptr< World_type >&);
 
   Joint (const ::xercesc::DOMElement& e,
          ::xml_schema::flags f = 0,
@@ -1523,6 +1558,7 @@ class Joint: public ::RSObject
          ::xml_schema::flags);
 
   protected:
+  ::xsd::cxx::tree::one< World_type > World_;
   Feedback_optional Feedback_;
   Body1_optional Body1_;
   Body2_optional Body2_;
@@ -1594,7 +1630,9 @@ class HingeJoint: public ::Joint
 
   // Constructors.
   //
-  HingeJoint ();
+  HingeJoint (const World_type&);
+
+  HingeJoint (::std::auto_ptr< World_type >&);
 
   HingeJoint (const ::xercesc::DOMElement& e,
               ::xml_schema::flags f = 0,
@@ -1710,7 +1748,9 @@ class HingeJoint2: public ::Joint
 
   // Constructors.
   //
-  HingeJoint2 ();
+  HingeJoint2 (const World_type&);
+
+  HingeJoint2 (::std::auto_ptr< World_type >&);
 
   HingeJoint2 (const ::xercesc::DOMElement& e,
                ::xml_schema::flags f = 0,

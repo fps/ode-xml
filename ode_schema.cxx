@@ -149,6 +149,24 @@ Geom (const Geom_sequence& s)
   this->Geom_ = s;
 }
 
+const Sim::Joint_sequence& Sim::
+Joint () const
+{
+  return this->Joint_;
+}
+
+Sim::Joint_sequence& Sim::
+Joint ()
+{
+  return this->Joint_;
+}
+
+void Sim::
+Joint (const Joint_sequence& s)
+{
+  this->Joint_ = s;
+}
+
 
 // World
 // 
@@ -613,6 +631,30 @@ Geom (const Geom_sequence& s)
 // Body
 // 
 
+const Body::World_type& Body::
+World () const
+{
+  return this->World_.get ();
+}
+
+Body::World_type& Body::
+World ()
+{
+  return this->World_.get ();
+}
+
+void Body::
+World (const World_type& x)
+{
+  this->World_.set (x);
+}
+
+void Body::
+World (::std::auto_ptr< World_type > x)
+{
+  this->World_.set (x);
+}
+
 const Body::Space_optional& Body::
 Space () const
 {
@@ -641,36 +683,6 @@ void Body::
 Space (::std::auto_ptr< Space_type > x)
 {
   this->Space_.set (x);
-}
-
-const Body::World_optional& Body::
-World () const
-{
-  return this->World_;
-}
-
-Body::World_optional& Body::
-World ()
-{
-  return this->World_;
-}
-
-void Body::
-World (const World_type& x)
-{
-  this->World_.set (x);
-}
-
-void Body::
-World (const World_optional& x)
-{
-  this->World_ = x;
-}
-
-void Body::
-World (::std::auto_ptr< World_type > x)
-{
-  this->World_.set (x);
 }
 
 const Body::Enabled_optional& Body::
@@ -1122,6 +1134,30 @@ LZ (const LZ_optional& x)
 
 // Joint
 // 
+
+const Joint::World_type& Joint::
+World () const
+{
+  return this->World_.get ();
+}
+
+Joint::World_type& Joint::
+World ()
+{
+  return this->World_.get ();
+}
+
+void Joint::
+World (const World_type& x)
+{
+  this->World_.set (x);
+}
+
+void Joint::
+World (::std::auto_ptr< World_type > x)
+{
+  this->World_.set (x);
+}
 
 const Joint::Feedback_optional& Joint::
 Feedback () const
@@ -3322,7 +3358,8 @@ Sim ()
   World_ (::xml_schema::flags (), this),
   Space_ (::xml_schema::flags (), this),
   Body_ (::xml_schema::flags (), this),
-  Geom_ (::xml_schema::flags (), this)
+  Geom_ (::xml_schema::flags (), this),
+  Joint_ (::xml_schema::flags (), this)
 {
 }
 
@@ -3334,7 +3371,8 @@ Sim (const Sim& x,
   World_ (x.World_, f, this),
   Space_ (x.Space_, f, this),
   Body_ (x.Body_, f, this),
-  Geom_ (x.Geom_, f, this)
+  Geom_ (x.Geom_, f, this),
+  Joint_ (x.Joint_, f, this)
 {
 }
 
@@ -3346,7 +3384,8 @@ Sim (const ::xercesc::DOMElement& e,
   World_ (f, this),
   Space_ (f, this),
   Body_ (f, this),
-  Geom_ (f, this)
+  Geom_ (f, this),
+  Joint_ (f, this)
 {
   if ((f & ::xml_schema::flags::base) == 0)
   {
@@ -3475,6 +3514,34 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
           throw ::xsd::cxx::tree::not_derived< char > ();
 
         this->Geom_.push_back (r);
+        continue;
+      }
+    }
+
+    // Joint
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "Joint",
+          "",
+          &::xsd::cxx::tree::factory_impl< Joint_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        ::std::auto_ptr< Joint_type > r (
+          dynamic_cast< Joint_type* > (tmp.get ()));
+
+        if (r.get ())
+          tmp.release ();
+        else
+          throw ::xsd::cxx::tree::not_derived< char > ();
+
+        this->Joint_.push_back (r);
         continue;
       }
     }
@@ -4106,10 +4173,30 @@ _xsd_SimpleSpace_type_factory_init (
 //
 
 Body::
-Body ()
+Body (const World_type& World)
 : ::RSObject (),
+  World_ (World, ::xml_schema::flags (), this),
   Space_ (::xml_schema::flags (), this),
-  World_ (::xml_schema::flags (), this),
+  Enabled_ (::xml_schema::flags (), this),
+  AngularVel_ (::xml_schema::flags (), this),
+  FiniteRotationAxis_ (::xml_schema::flags (), this),
+  FiniteRotationMode_ (::xml_schema::flags (), this),
+  Force_ (::xml_schema::flags (), this),
+  GravityMode_ (::xml_schema::flags (), this),
+  LinearVel_ (::xml_schema::flags (), this),
+  Mass_ (::xml_schema::flags (), this),
+  Torque_ (::xml_schema::flags (), this),
+  Position_ (::xml_schema::flags (), this),
+  Quaternion_ (::xml_schema::flags (), this),
+  Rotation_ (::xml_schema::flags (), this)
+{
+}
+
+Body::
+Body (::std::auto_ptr< World_type >& World)
+: ::RSObject (),
+  World_ (World, ::xml_schema::flags (), this),
+  Space_ (::xml_schema::flags (), this),
   Enabled_ (::xml_schema::flags (), this),
   AngularVel_ (::xml_schema::flags (), this),
   FiniteRotationAxis_ (::xml_schema::flags (), this),
@@ -4130,8 +4217,8 @@ Body (const Body& x,
       ::xml_schema::flags f,
       ::xml_schema::container* c)
 : ::RSObject (x, f, c),
-  Space_ (x.Space_, f, this),
   World_ (x.World_, f, this),
+  Space_ (x.Space_, f, this),
   Enabled_ (x.Enabled_, f, this),
   AngularVel_ (x.AngularVel_, f, this),
   FiniteRotationAxis_ (x.FiniteRotationAxis_, f, this),
@@ -4152,8 +4239,8 @@ Body (const ::xercesc::DOMElement& e,
       ::xml_schema::flags f,
       ::xml_schema::container* c)
 : ::RSObject (e, f | ::xml_schema::flags::base, c),
-  Space_ (f, this),
   World_ (f, this),
+  Space_ (f, this),
   Enabled_ (f, this),
   AngularVel_ (f, this),
   FiniteRotationAxis_ (f, this),
@@ -4186,6 +4273,37 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     const ::xsd::cxx::xml::qualified_name< char > n (
       ::xsd::cxx::xml::dom::name< char > (i));
 
+    // World
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "World",
+          "",
+          &::xsd::cxx::tree::factory_impl< World_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!World_.present ())
+        {
+          ::std::auto_ptr< World_type > r (
+            dynamic_cast< World_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->World_.set (r);
+          continue;
+        }
+      }
+    }
+
     // Space
     //
     {
@@ -4212,37 +4330,6 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
             throw ::xsd::cxx::tree::not_derived< char > ();
 
           this->Space_.set (r);
-          continue;
-        }
-      }
-    }
-
-    // World
-    //
-    {
-      ::xsd::cxx::tree::type_factory_map< char >& tfm (
-        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
-
-      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
-        tfm.create (
-          "World",
-          "",
-          &::xsd::cxx::tree::factory_impl< World_type >,
-          false, false, i, n, f, this));
-
-      if (tmp.get () != 0)
-      {
-        if (!this->World_)
-        {
-          ::std::auto_ptr< World_type > r (
-            dynamic_cast< World_type* > (tmp.get ()));
-
-          if (r.get ())
-            tmp.release ();
-          else
-            throw ::xsd::cxx::tree::not_derived< char > ();
-
-          this->World_.set (r);
           continue;
         }
       }
@@ -4562,6 +4649,13 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 
     break;
   }
+
+  if (!World_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "World",
+      "");
+  }
 }
 
 Body* Body::
@@ -4727,8 +4821,20 @@ _xsd_BoxTotalMass_type_factory_init (
 //
 
 Joint::
-Joint ()
+Joint (const World_type& World)
 : ::RSObject (),
+  World_ (World, ::xml_schema::flags (), this),
+  Feedback_ (::xml_schema::flags (), this),
+  Body1_ (::xml_schema::flags (), this),
+  Body2_ (::xml_schema::flags (), this),
+  Param_ (::xml_schema::flags (), this)
+{
+}
+
+Joint::
+Joint (::std::auto_ptr< World_type >& World)
+: ::RSObject (),
+  World_ (World, ::xml_schema::flags (), this),
   Feedback_ (::xml_schema::flags (), this),
   Body1_ (::xml_schema::flags (), this),
   Body2_ (::xml_schema::flags (), this),
@@ -4741,6 +4847,7 @@ Joint (const Joint& x,
        ::xml_schema::flags f,
        ::xml_schema::container* c)
 : ::RSObject (x, f, c),
+  World_ (x.World_, f, this),
   Feedback_ (x.Feedback_, f, this),
   Body1_ (x.Body1_, f, this),
   Body2_ (x.Body2_, f, this),
@@ -4753,6 +4860,7 @@ Joint (const ::xercesc::DOMElement& e,
        ::xml_schema::flags f,
        ::xml_schema::container* c)
 : ::RSObject (e, f | ::xml_schema::flags::base, c),
+  World_ (f, this),
   Feedback_ (f, this),
   Body1_ (f, this),
   Body2_ (f, this),
@@ -4776,6 +4884,37 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
     const ::xercesc::DOMElement& i (p.cur_element ());
     const ::xsd::cxx::xml::qualified_name< char > n (
       ::xsd::cxx::xml::dom::name< char > (i));
+
+    // World
+    //
+    {
+      ::xsd::cxx::tree::type_factory_map< char >& tfm (
+        ::xsd::cxx::tree::type_factory_map_instance< 0, char > ());
+
+      ::std::auto_ptr< ::xsd::cxx::tree::type > tmp (
+        tfm.create (
+          "World",
+          "",
+          &::xsd::cxx::tree::factory_impl< World_type >,
+          false, false, i, n, f, this));
+
+      if (tmp.get () != 0)
+      {
+        if (!World_.present ())
+        {
+          ::std::auto_ptr< World_type > r (
+            dynamic_cast< World_type* > (tmp.get ()));
+
+          if (r.get ())
+            tmp.release ();
+          else
+            throw ::xsd::cxx::tree::not_derived< char > ();
+
+          this->World_.set (r);
+          continue;
+        }
+      }
+    }
 
     // Feedback
     //
@@ -4880,6 +5019,13 @@ parse (::xsd::cxx::xml::dom::parser< char >& p,
 
     break;
   }
+
+  if (!World_.present ())
+  {
+    throw ::xsd::cxx::tree::expected_element< char > (
+      "World",
+      "");
+  }
 }
 
 Joint* Joint::
@@ -4904,8 +5050,17 @@ _xsd_Joint_type_factory_init (
 //
 
 HingeJoint::
-HingeJoint ()
-: ::Joint (),
+HingeJoint (const World_type& World)
+: ::Joint (World),
+  Anchor_ (::xml_schema::flags (), this),
+  Axis_ (::xml_schema::flags (), this),
+  Torque_ (::xml_schema::flags (), this)
+{
+}
+
+HingeJoint::
+HingeJoint (::std::auto_ptr< World_type >& World)
+: ::Joint (World),
   Anchor_ (::xml_schema::flags (), this),
   Axis_ (::xml_schema::flags (), this),
   Torque_ (::xml_schema::flags (), this)
@@ -5050,8 +5205,18 @@ _xsd_HingeJoint_type_factory_init (
 //
 
 HingeJoint2::
-HingeJoint2 ()
-: ::Joint (),
+HingeJoint2 (const World_type& World)
+: ::Joint (World),
+  Anchor_ (::xml_schema::flags (), this),
+  Axis1_ (::xml_schema::flags (), this),
+  Axis2_ (::xml_schema::flags (), this),
+  Torque_ (::xml_schema::flags (), this)
+{
+}
+
+HingeJoint2::
+HingeJoint2 (::std::auto_ptr< World_type >& World)
+: ::Joint (World),
   Anchor_ (::xml_schema::flags (), this),
   Axis1_ (::xml_schema::flags (), this),
   Axis2_ (::xml_schema::flags (), this),
@@ -13881,6 +14046,33 @@ operator<< (::xercesc::DOMElement& e, const Sim& i)
           false, false, e, *b);
     }
   }
+
+  // Joint
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    for (Sim::Joint_const_iterator
+         b (i.Joint ().begin ()), n (i.Joint ().end ());
+         b != n; ++b)
+    {
+      if (typeid (Sim::Joint_type) == typeid (*b))
+      {
+        ::xercesc::DOMElement& s (
+          ::xsd::cxx::xml::dom::create_element (
+            "Joint",
+            e));
+
+        s << *b;
+      }
+      else
+        tsm.serialize (
+          "Joint",
+          "",
+          false, false, e, *b);
+    }
+  }
 }
 
 static
@@ -14786,6 +14978,29 @@ operator<< (::xercesc::DOMElement& e, const Body& i)
 {
   e << static_cast< const ::RSObject& > (i);
 
+  // World
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const Body::World_type& x (i.World ());
+    if (typeid (Body::World_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "World",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "World",
+        "",
+        false, false, e, x);
+  }
+
   // Space
   //
   {
@@ -14807,32 +15022,6 @@ operator<< (::xercesc::DOMElement& e, const Body& i)
       else
         tsm.serialize (
           "Space",
-          "",
-          false, false, e, x);
-    }
-  }
-
-  // World
-  //
-  {
-    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
-      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
-
-    if (i.World ())
-    {
-      const Body::World_type& x (*i.World ());
-      if (typeid (Body::World_type) == typeid (x))
-      {
-        ::xercesc::DOMElement& s (
-          ::xsd::cxx::xml::dom::create_element (
-            "World",
-            e));
-
-        s << x;
-      }
-      else
-        tsm.serialize (
-          "World",
           "",
           false, false, e, x);
     }
@@ -15373,6 +15562,29 @@ void
 operator<< (::xercesc::DOMElement& e, const Joint& i)
 {
   e << static_cast< const ::RSObject& > (i);
+
+  // World
+  //
+  {
+    ::xsd::cxx::tree::type_serializer_map< char >& tsm (
+      ::xsd::cxx::tree::type_serializer_map_instance< 0, char > ());
+
+    const Joint::World_type& x (i.World ());
+    if (typeid (Joint::World_type) == typeid (x))
+    {
+      ::xercesc::DOMElement& s (
+        ::xsd::cxx::xml::dom::create_element (
+          "World",
+          e));
+
+      s << x;
+    }
+    else
+      tsm.serialize (
+        "World",
+        "",
+        false, false, e, x);
+  }
 
   // Feedback
   //

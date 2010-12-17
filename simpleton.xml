@@ -10,5 +10,32 @@
 	 <Name>Thing</Name>
 	 <World>Earth</World>
 	 <Mass xsi:type="BoxTotalMass" M="1" LX="1" LY="1" LZ="1"/>
+	 <Position X="-1" Y="0" Z="0"/>
   </Body>
+
+  <Body>
+	 <Name>Thing2</Name>
+	 <World>Earth</World>
+	 <GravityMode>false</GravityMode>
+	 <Mass xsi:type="BoxTotalMass" M="1" LX="1" LY="1" LZ="1"/>
+	 <Position X="1" Y="0" Z="0"/>
+  </Body>
+
+  <Joint xsi:type="HingeJoint">
+	 <Name>TestJoint</Name>
+	 <World>Earth</World>
+	 <Body1>Thing</Body1>
+	 <Body2>Thing2</Body2>
+	 <Anchor X="0" Y="0" Z="0"/>
+	 <Axis X="1" Y="1" Z="1"/>
+  </Joint>
+
+  <Joint xsi:type="HingeJoint">
+	 <Name>FixJoint</Name>
+	 <World>Earth</World>
+	 <Body1>None</Body1>
+	 <Body2>Thing2</Body2>
+	 <Anchor X="3" Y="0" Z="0"/>
+	 <Axis X="-1" Y="1" Z="-1"/>
+  </Joint>
 </Sim>

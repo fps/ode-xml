@@ -17,6 +17,7 @@
 			 <xsd:element name="Space" type="SpaceBase" minOccurs="0" maxOccurs="unbounded"/>
 			 <xsd:element name="Body" type="Body" minOccurs="0" maxOccurs="unbounded"/>
 			 <xsd:element name="Geom" type="GeomObject" minOccurs="0" maxOccurs="unbounded"/>
+			 <xsd:element name="Joint" type="Joint" minOccurs="0" maxOccurs="unbounded"/>
 		  </xsd:sequence>
 		</xsd:extension>		  
 	 </xsd:complexContent>
@@ -83,8 +84,8 @@
 	 <xsd:complexContent>
 		<xsd:extension base="RSObject">
 		  <xsd:sequence>
+			 <xsd:element name="World" type="xsd:string"/>
 			 <xsd:element name="Space" type="xsd:string" minOccurs="0"/>
-			 <xsd:element name="World" type="xsd:string" minOccurs="0"/>
 			 <xsd:element name="Enabled" type="xsd:boolean" minOccurs="0"/>
    		 <xsd:element name="AngularVel" type="Vector" minOccurs="0"/>
   			 <xsd:element name="FiniteRotationAxis" type="Vector" minOccurs="0"/>
@@ -127,6 +128,7 @@
 	 <xsd:complexContent>
 		<xsd:extension base="RSObject">
 		  <xsd:sequence>
+			 <xsd:element name="World" type="xsd:string"/>
 			 <xsd:element name="Feedback" type="xsd:boolean" minOccurs="0"/>
 			 <xsd:element name="Body1" type="xsd:string" minOccurs="0"/>
 			 <xsd:element name="Body2" type="xsd:string" minOccurs="0"/>
